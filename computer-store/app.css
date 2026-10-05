@@ -1,0 +1,56 @@
+/* رایانک — اپ فروشگاه کامپیوتر (موبایل ۳۹۰×۸۴۴) */
+:root {
+  --brand: #1660d0;
+  --brand-dark: #0f4aa6;
+  --brand-soft: #e8f0fd;
+  --sale: #e5482d;
+  --ok: #138a5a;
+  --bg: #f4f5f7;
+  --card: #ffffff;
+  --ink: #1d2129;
+  --ink-2: #4b5260;
+  --muted: #858c99;
+  --line: #e7e9ed;
+  --r: 12px;
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body { font-size: 14px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+.app { width: 390px; min-height: 844px; margin: 0 auto; background: var(--bg); direction: rtl; position: relative; padding-bottom: 96px; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; border: 0; background: none; color: inherit; cursor: pointer; padding: 0; }
+.ic { width: 22px; height: 22px; flex: none; }
+.ic.s { width: 18px; height: 18px; }
+.ic.xs { width: 14px; height: 14px; }
+.art { display: block; width: 100%; height: auto; }
+
+.bar { display: flex; align-items: center; gap: 12px; padding: 14px 16px 10px; background: var(--card); }
+.bar h1 { margin: 0; font-size: 17px; font-weight: 700; flex: 1; }
+.icon-btn { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 10px; color: var(--ink-2); position: relative; }
+.badge { position: absolute; top: 4px; left: 4px; min-width: 17px; height: 17px; padding: 0 4px; border-radius: 9px; background: var(--sale); color: #fff; font-size: 11px; font-weight: 700; line-height: 17px; text-align: center; }
+
+.price { font-weight: 800; font-size: 16px; white-space: nowrap; }
+.price small { font-size: 11px; font-weight: 500; color: var(--ink-2); margin-inline-start: 3px; }
+.old { font-size: 12px; color: var(--muted); text-decoration: line-through; }
+.off { background: var(--sale); color: #fff; font-size: 11px; font-weight: 700; border-radius: 10px; padding: 0 7px; line-height: 19px; }
+.rate { display: inline-flex; align-items: center; gap: 3px; font-size: 12px; color: var(--ink-2); }
+.rate .ic { color: #f2b01e; }
+
+.btn { display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 10px; background: var(--brand); color: #fff; font-weight: 700; font-size: 15px; }
+.btn.line { background: var(--card); color: var(--brand); border: 1px solid var(--brand); }
+
+.tabbar { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 390px; background: var(--card); border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(4, 1fr); padding: 8px 0 calc(10px + env(safe-area-inset-bottom, 0px)); direction: rtl; z-index: 5; }
+.tabbar a { display: grid; justify-items: center; gap: 2px; font-size: 11px; color: var(--muted); position: relative; }
+.tabbar a.on { color: var(--brand); font-weight: 700; }
+.tabbar .badge { top: -4px; left: 30px; }
+
+.sticky { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 390px; background: var(--card); border-top: 1px solid var(--line); padding: 12px 16px calc(14px + env(safe-area-inset-bottom, 0px)); direction: rtl; z-index: 5; display: flex; align-items: center; gap: 14px; }
+.sticky .btn { flex: 1; }
+
+.sec { background: var(--card); margin-top: 8px; padding: 16px; }
+.sec-h { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.sec-h h2 { margin: 0; font-size: 15px; font-weight: 700; }
+.sec-h a { font-size: 12px; color: var(--brand); display: inline-flex; align-items: center; gap: 2px; }
+.en { direction: ltr; unicode-bidi: isolate; }

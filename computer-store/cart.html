@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>رایانک — سبد خرید</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="app.css">
+<style>
+.app { padding-bottom: 110px; }
+.bar small { color: var(--muted); font-weight: 400; font-size: 12px; }
+.ci { display: grid; grid-template-columns: 88px 1fr; gap: 12px; padding: 14px 0; border-top: 1px solid var(--line); }
+.ci:first-of-type { border-top: 0; padding-top: 0; }
+.ci .img { background: #f7f8fa; border-radius: 10px; padding: 10px 6px; }
+.ci .n { font-size: 13px; line-height: 1.7; font-weight: 500; }
+.ci .m { font-size: 11.5px; color: var(--muted); display: grid; gap: 1px; margin: 4px 0 8px; }
+.ci .m span { display: flex; align-items: center; gap: 4px; }
+.ci .b { display: flex; justify-content: space-between; align-items: center; }
+.qty { display: flex; align-items: center; border: 1px solid var(--line); border-radius: 10px; height: 36px; }
+.qty button { width: 34px; height: 34px; display: grid; place-items: center; color: var(--brand); }
+.qty span { min-width: 22px; text-align: center; font-weight: 700; color: var(--brand); }
+.ci .save { font-size: 11px; color: var(--sale); }
+
+.addr { display: flex; gap: 10px; align-items: flex-start; font-size: 13px; }
+.addr .ic { color: var(--ink-2); margin-top: 3px; }
+.addr small { display: block; font-size: 12px; color: var(--muted); }
+.addr a { margin-inline-start: auto; font-size: 12px; color: var(--brand); white-space: nowrap; }
+.ship { display: grid; gap: 8px; margin-top: 12px; }
+.opt { display: flex; align-items: center; gap: 10px; border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; font-size: 12.5px; }
+.opt.on { border-color: var(--brand); background: var(--brand-soft); }
+.radio { width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid #b8bec8; flex: none; }
+.opt.on .radio { border: 5px solid var(--brand); }
+.opt small { display: block; color: var(--muted); font-size: 11.5px; }
+.opt .p { margin-inline-start: auto; font-weight: 700; }
+.opt .free { color: var(--ok); }
+
+.sum { display: grid; gap: 8px; font-size: 13px; }
+.sum div { display: flex; justify-content: space-between; color: var(--ink-2); }
+.sum .disc { color: var(--sale); }
+.sum .total { border-top: 1px solid var(--line); padding-top: 10px; color: var(--ink); font-weight: 700; }
+.code { display: flex; gap: 8px; margin-top: 12px; }
+.code .in { flex: 1; height: 42px; border: 1px solid var(--line); border-radius: 10px; display: flex; align-items: center; padding: 0 12px; color: var(--muted); font-size: 12.5px; gap: 6px; }
+.code button { padding: 0 14px; border-radius: 10px; background: var(--bg); color: var(--brand); font-weight: 700; font-size: 12.5px; }
+
+.sticky .p { display: grid; justify-items: end; font-size: 11.5px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <div class="bar">
+    <a class="icon-btn" href="home.html" aria-label="بازگشت"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a>
+    <h1>سبد خرید <small>(۲ کالا)</small></h1>
+    <button class="icon-btn" aria-label="حذف همه"><svg class="ic s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14M10 7V5h4v2M7 7l1 13h8l1-13"/></svg></button>
+  </div>
+
+  <section class="sec">
+    <div class="ci">
+      <div class="img"><svg class="art " viewBox="0 0 160 110" aria-hidden="true"><defs><linearGradient id="g63099" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c9d6ff"/><stop offset="1" stop-color="#6f8ee8"/></linearGradient></defs>
+<ellipse cx="80" cy="101" rx="66" ry="4.5" fill="#000" opacity=".08"/>
+<rect x="30" y="14" width="100" height="66" rx="5" fill="#d5d9df"/>
+<rect x="34" y="18" width="92" height="58" rx="2.5" fill="#15171b"/>
+<rect x="37" y="21" width="86" height="52" rx="1.5" fill="url(#g63099)"/>
+<path d="M37 60 Q62 44 84 55 T123 48 V73 H37 Z" fill="#fff" opacity=".22"/>
+<path d="M18 82 H142 L148 93 Q148 96 145 96 H15 Q12 96 12 93 Z" fill="#bfc4cc"/>
+<path d="M12 93 H148 Q148 96 145 96 H15 Q12 96 12 93 Z" fill="#a9b0ba"/>
+<rect x="68" y="82" width="24" height="3" rx="1.5" fill="#a9b0ba" opacity=".6"/></svg></div>
+      <div>
+        <div class="n">لپ‌تاپ ایسوس Vivobook 15 X1504VA</div>
+        <div class="m"><span><svg class="ic xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8-7 10-4-2-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>گارانتی ۱۸ ماهه شرکتی</span><span><svg class="ic xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zM14 9.5h4l3 3.5v3h-7"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg>ارسال فردا</span></div>
+        <div class="b">
+          <div class="qty"><button aria-label="افزایش"><svg class="ic s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><span>۱</span><button aria-label="حذف"><svg class="ic s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 7h14M10 7V5h4v2M7 7l1 13h8l1-13"/></svg></button></div>
+          <div style="text-align: left;"><div class="save">۳٬۶۱۰٬۰۰۰ تخفیف</div><span class="price">۴۸٬۷۹۰٬۰۰۰<small>تومان</small></span></div>
+        </div>
+      </div>
+    </div>
+    <div class="ci">
+      <div class="img"><svg class="art " viewBox="0 0 160 110" aria-hidden="true"><ellipse cx="80" cy="99" rx="30" ry="4" fill="#000" opacity=".08"/>
+<rect x="56" y="16" width="48" height="82" rx="24" fill="#3d4148"/><path d="M56 46 Q56 16 80 16 V46 Z" fill="#4a4f57"/>
+<path d="M80 16 V46 M56 46 H104" stroke="#2b2e33" stroke-width="2"/><rect x="77" y="25" width="6" height="12" rx="3" fill="#8a9099"/></svg></div>
+      <div>
+        <div class="n">ماوس بی‌سیم لاجیتک M185</div>
+        <div class="m"><span><svg class="ic xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l7 3v5c0 4.6-3 8-7 10-4-2-7-5.4-7-10V6z"/><path d="M9 12l2 2 4-4"/></svg>گارانتی ۱۲ ماهه</span><span><svg class="ic xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h11v10H3zM14 9.5h4l3 3.5v3h-7"/><circle cx="7" cy="18" r="1.8"/><circle cx="17" cy="18" r="1.8"/></svg>ارسال فردا</span></div>
+        <div class="b">
+          <div class="qty"><button aria-label="افزایش"><svg class="ic s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg></button><span>۱</span><button aria-label="کاهش"><svg class="ic s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14"/></svg></button></div>
+          <span class="price">۸۹۵٬۰۰۰<small>تومان</small></span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><h2>ارسال به</h2></div>
+    <div class="addr"><svg class="ic s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.7-6.5-11a6.5 6.5 0 0 1 13 0c0 5.3-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg><div>تهران، خیابان انقلاب، کوچه بالاور، پلاک ۱۲، واحد ۴<small>سارا احمدی · ۰۹۱۲ *** ۴۵۶۷</small></div><a href="#">تغییر</a></div>
+    <div class="ship">
+      <div class="opt on"><i class="radio"></i><div>پیک رایانک<small>فردا، ۹ تا ۱۳</small></div><span class="p free">رایگان</span></div>
+      <div class="opt"><i class="radio"></i><div>تحویل حضوری از فروشگاه<small>جمهوری، پاساژ امجد · از امروز ساعت ۱۶</small></div><span class="p free">رایگان</span></div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sum">
+      <div><span>قیمت کالاها (۲)</span><span>۵۳٬۴۹۰٬۰۰۰ تومان</span></div>
+      <div class="disc"><span>تخفیف</span><span>۳٬۸۰۵٬۰۰۰− تومان</span></div>
+      <div><span>هزینه ارسال</span><span>رایگان</span></div>
+      <div class="total"><span>مبلغ قابل پرداخت</span><span>۴۹٬۶۸۵٬۰۰۰ تومان</span></div>
+    </div>
+    <div class="code"><div class="in"><svg class="ic s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12.5V5a1 1 0 0 1 1-1h7.5L20 11.5 12.5 19z"/><circle cx="8.5" cy="8.5" r="1.4"/></svg>کد تخفیف دارید؟</div><button>ثبت</button></div>
+  </section>
+
+  <div class="sticky">
+    <button class="btn">ادامه و پرداخت</button>
+    <div class="p">مبلغ قابل پرداخت<span class="price" style="color: var(--ink);">۴۹٬۶۸۵٬۰۰۰<small>تومان</small></span></div>
+  </div>
+</div>
+</body>
+</html>

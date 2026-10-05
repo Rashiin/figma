@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>موتوریار — انتخاب زمان</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap">
+<link rel="stylesheet" href="site.css">
+<style>
+body { font-size: 14px; }
+.app { width: 390px; min-height: 844px; margin: 0 auto; background: var(--bg); padding-bottom: 120px; }
+.bar { display: flex; align-items: center; gap: 10px; padding: 14px 16px 6px; background: var(--card); }
+.bar h1 { margin: 0; font-size: 17px; flex: 1; }
+.icon-btn { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 10px; color: var(--ink-2); }
+.prog { background: var(--card); padding: 6px 16px 14px; display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; font-size: 11.5px; color: var(--muted); }
+.prog div { display: grid; gap: 6px; }
+.prog i { height: 4px; border-radius: 2px; background: var(--line); }
+.prog .done i, .prog .on i { background: var(--orange); }
+.prog .on { color: var(--orange-dark); font-weight: 700; }
+.prog .done { color: var(--ink-2); }
+.card { background: var(--card); margin-top: 8px; padding: 16px; }
+.card h2 { margin: 0 0 12px; font-size: 15px; display: flex; justify-content: space-between; align-items: center; }
+.card h2 a { font-size: 12.5px; color: var(--orange-dark); font-weight: 500; }
+.sum { display: flex; gap: 12px; align-items: center; }
+.sum .ico { width: 44px; height: 44px; border-radius: 12px; background: var(--orange-soft); color: var(--orange-dark); display: grid; place-items: center; }
+.sum b { display: block; font-size: 14px; }
+.sum small { color: var(--muted); font-size: 12.5px; }
+.days { display: flex; gap: 8px; overflow: hidden; }
+.day { flex: none; width: 66px; border: 1px solid var(--line); border-radius: 12px; padding: 8px 0; display: grid; justify-items: center; gap: 0; font-size: 12px; color: var(--ink-2); }
+.day b { font-size: 18px; color: var(--ink); }
+.day.on { background: var(--navy); border-color: var(--navy); color: #c8d2e4; }
+.day.on b { color: #fff; }
+.slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 14px; }
+.slot { border: 1px solid var(--line); border-radius: 10px; height: 46px; display: grid; place-items: center; font-size: 13px; line-height: 1.3; text-align: center; }
+.slot small { display: block; font-size: 10.5px; color: var(--muted); }
+.slot.on { border: 1.5px solid var(--orange); background: var(--orange-soft); color: var(--orange-dark); font-weight: 700; }
+.slot.off { background: var(--bg); color: #b4bac4; border-color: var(--bg); }
+.slot.off small { color: #b4bac4; }
+.map { height: 128px; border-radius: 12px; overflow: hidden; position: relative; background: #e9edf2; }
+.map svg { width: 100%; height: 100%; display: block; }
+.addr { display: flex; gap: 10px; margin-top: 12px; font-size: 13.5px; }
+.addr .ic { color: var(--ink-2); margin-top: 3px; }
+.addr small { display: block; color: var(--muted); font-size: 12px; }
+.lines { display: grid; gap: 8px; font-size: 13px; color: var(--ink-2); }
+.lines div { display: flex; justify-content: space-between; }
+.lines .tot { border-top: 1px dashed var(--line); padding-top: 10px; color: var(--ink); font-weight: 700; font-size: 14px; }
+.foot { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 390px; background: var(--card); border-top: 1px solid var(--line); padding: 12px 16px calc(14px + env(safe-area-inset-bottom, 0px)); display: grid; gap: 8px; }
+.foot .info { display: flex; justify-content: space-between; font-size: 12.5px; color: var(--ink-2); }
+.foot .info b { color: var(--ink); }
+.foot .btn { width: 100%; }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="bar">
+    <a class="icon-btn" href="landing.html" aria-label="بازگشت"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a>
+    <h1>زمان و مکان</h1>
+  </div>
+  <div class="prog">
+    <div class="done"><i></i>خودرو</div>
+    <div class="done"><i></i>سرویس</div>
+    <div class="on"><i></i>زمان</div>
+    <div><i></i>تأیید</div>
+  </div>
+
+  <section class="card">
+    <div class="sum">
+      <span class="ico"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3.5c3 4.2 6 7.6 6 11a6 6 0 0 1-12 0c0-3.4 3-6.8 6-11z"/></svg></span>
+      <div><b>تعویض روغن · بسته استاندارد</b><small>پژو ۲۰۶ تیپ ۵ · توتال کوارتز ۷۰۰۰</small></div>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>روز</h2>
+    <div class="days">
+      <button class="day on">امروز<b>۱۳</b>مهر</button>
+      <button class="day">سه‌شنبه<b>۱۴</b>مهر</button>
+      <button class="day">چهارشنبه<b>۱۵</b>مهر</button>
+      <button class="day">پنجشنبه<b>۱۶</b>مهر</button>
+      <button class="day">شنبه<b>۱۸</b>مهر</button>
+    </div>
+    <div class="slots">
+      <button class="slot off">۸ تا ۱۰<small>تکمیل</small></button>
+      <button class="slot off">۱۰ تا ۱۲<small>تکمیل</small></button>
+      <button class="slot">۱۲ تا ۱۴</button>
+      <button class="slot">۱۴ تا ۱۶</button>
+      <button class="slot on">۱۶ تا ۱۸</button>
+      <button class="slot">۱۸ تا ۲۰<small>۱ ظرفیت</small></button>
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>محل انجام کار <a href="#">تغییر</a></h2>
+    <div class="map">
+      <svg viewBox="0 0 358 128" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="358" height="128" fill="#e9edf2"/>
+        <path d="M0 40 L358 58 M0 98 L358 88 M70 0 L95 128 M210 0 L200 128 M300 0 L330 128" stroke="#fff" stroke-width="8"/>
+        <path d="M0 18 L358 22 M140 0 L150 128" stroke="#fff" stroke-width="3"/>
+        <rect x="230" y="66" width="56" height="16" rx="3" fill="#d6ead8"/>
+        <circle cx="179" cy="64" r="22" fill="#ff7a1a" opacity=".15"/>
+        <path d="M179 70 C179 70 168 60 168 52 A11 11 0 0 1 190 52 C190 60 179 70 179 70Z" fill="#ff7a1a"/><circle cx="179" cy="52" r="4" fill="#fff"/>
+      </svg>
+    </div>
+    <div class="addr"><svg class="ic s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 21s-6.5-5.7-6.5-11a6.5 6.5 0 0 1 13 0c0 5.3-6.5 11-6.5 11z"/><circle cx="12" cy="10" r="2.3"/></svg><div>سعادت‌آباد، خیابان سرو غربی، کوچه ۱۲، جلوی پلاک ۸<small>جای پارک: داخل کوچه</small></div></div>
+  </section>
+
+  <section class="card">
+    <div class="lines">
+      <div><span>روغن و فیلتر</span><span>۲٬۰۳۰٬۰۰۰ تومان</span></div>
+      <div><span>فیلتر هوا</span><span>جزو بسته</span></div>
+      <div><span>خدمات در محل</span><span>۴۵۰٬۰۰۰ تومان</span></div>
+      <div class="tot"><span>جمع</span><span>۲٬۴۸۰٬۰۰۰ تومان</span></div>
+    </div>
+  </section>
+
+  <div class="foot">
+    <div class="info"><span>امروز، ۱۶ تا ۱۸</span><span>پرداخت بعد از انجام کار · <b>۲٬۴۸۰٬۰۰۰ تومان</b></span></div>
+    <a class="btn" href="tracking.html">تأیید زمان</a>
+  </div>
+</div>
+</body>
+</html>

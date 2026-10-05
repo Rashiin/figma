@@ -1,0 +1,36 @@
+/* موتوریار — خدمات خودرو در محل */
+:root {
+  --navy: #13233f;
+  --navy-2: #1d3257;
+  --orange: #ff7a1a;
+  --orange-dark: #e2620a;
+  --orange-soft: #fff1e6;
+  --ok: #16915f;
+  --bg: #f5f6f8;
+  --card: #ffffff;
+  --ink: #18202e;
+  --ink-2: #4c5566;
+  --muted: #8a92a1;
+  --line: #e6e8ec;
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body { font-size: 15px; line-height: 1.8; -webkit-font-smoothing: antialiased; direction: rtl; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; border: 0; background: none; color: inherit; cursor: pointer; padding: 0; }
+.ic { width: 22px; height: 22px; flex: none; }
+.ic.s { width: 18px; height: 18px; }
+.ic.xs { width: 14px; height: 14px; }
+.ic.l { width: 28px; height: 28px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 22px; border-radius: 10px; background: var(--orange); color: #fff; font-weight: 700; }
+.btn.dark { background: var(--navy); }
+.btn.ghost { background: transparent; border: 1px solid var(--line); color: var(--ink); }
+.logo { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 21px; color: var(--navy); }
+.logo span { width: 32px; height: 32px; border-radius: 9px; background: var(--orange); color: #fff; display: grid; place-items: center; }
+.logo span .ic { width: 20px; height: 20px; }
+.plate { display: inline-flex; align-items: stretch; direction: ltr; border: 1.5px solid #1b1b1b; border-radius: 5px; overflow: hidden; font-weight: 800; font-size: 13px; height: 28px; background: #fff; }
+.plate .ir { background: #1d4fb8; width: 14px; }
+.plate .n { padding: 0 8px; display: flex; align-items: center; gap: 6px; direction: rtl; }
+.plate .c { border-inline-start: 1.5px solid #1b1b1b; padding: 0 6px; display: grid; place-items: center; font-size: 11px; line-height: 1; }
