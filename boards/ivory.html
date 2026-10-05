@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>صدف — تابلو قیمت طلا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;700;800&family=Markazi+Text:wght@500;700&family=Aref+Ruqaa:wght@700&display=swap">
+<link rel="stylesheet" href="../assets/board-base.css">
+<style>
+/* طرح ۲ — «صدف»: زمینه‌ی صدفی روشن برای ویترین‌های پرنور؛ نوار زمردی در سمت راست، جدول‌های کلاسیک در متن */
+:root {
+  --pearl: #f2efe8;
+  --paper: #fbfaf6;
+  --emerald: #0f4b3b;
+  --emerald-deep: #0a3429;
+  --brass: #a47e33;
+  --brass-soft: #e7d6ae;
+  --ink: #18211d;
+  --muted: #69716b;
+  --line: #ddd6c6;
+  --up: #0f7f55;
+  --down: #c03d2b;
+  --flash-up: rgba(15, 127, 85, .14);
+  --flash-down: rgba(192, 61, 43, .14);
+  --f-num: "Vazirmatn", "Tahoma", sans-serif;
+  --f-text: "Vazirmatn", "Tahoma", sans-serif;
+  --f-title: "Markazi Text", "Vazirmatn", serif;
+  --f-shop: "Aref Ruqaa", "Markazi Text", serif;
+  color-scheme: light;
+}
+html, body { background: var(--pearl); color: var(--ink); font-family: var(--f-text); }
+.stage { background: var(--pearl); display: grid; grid-template-columns: 440px 1fr; }
+
+/* ---------- نوار زمردی ---------- */
+.band { background: var(--emerald); color: var(--paper); display: flex; flex-direction: column; padding: 44px 40px 30px; gap: 26px; position: relative; }
+.band::after { content: ""; position: absolute; inset: 16px; border: 1px solid rgba(231, 214, 174, .28); pointer-events: none; }
+.logo { display: flex; flex-direction: column; align-items: center; gap: 12px; text-align: center; padding-bottom: 22px; border-bottom: 1px solid rgba(231, 214, 174, .25); }
+.logo svg { width: 92px; height: 92px; }
+.logo .shop { font-family: var(--f-shop); font-size: 50px; line-height: 1.25; color: var(--brass-soft); }
+.logo .sub { font-size: 18px; color: rgba(251, 250, 246, .7); }
+.when { display: grid; grid-template-columns: auto 1fr; align-items: center; gap: 6px 20px; }
+.day { grid-row: 1 / 3; font-family: var(--f-num); font-weight: 800; font-size: 92px; line-height: 1; color: var(--brass-soft); }
+.month { font-family: var(--f-title); font-weight: 700; font-size: 40px; line-height: 1; }
+.wk { font-size: 20px; color: rgba(251, 250, 246, .75); }
+.wk span { direction: ltr; unicode-bidi: isolate; }
+.time { font-family: var(--f-num); font-weight: 300; font-size: 84px; line-height: 1; text-align: center; padding-block: 8px; border-block: 1px solid rgba(231, 214, 174, .25); }
+.time .sec { font-size: 34px; color: var(--brass-soft); margin-inline-start: 8px; }
+.ounce { display: grid; gap: 4px; }
+.ounce .k { display: flex; justify-content: space-between; font-size: 20px; color: rgba(251, 250, 246, .8); }
+.ounce .k [data-d] { font-size: 19px; font-weight: 700; }
+.band [data-dir="up"] { color: #8fe0b9; }
+.band [data-dir="down"] { color: #ffb3a6; }
+.ounce .v { font-family: var(--f-num); font-weight: 800; font-size: 56px; direction: ltr; text-align: right; line-height: 1.1; }
+.ounce .v small { font-size: 30px; color: var(--brass-soft); font-weight: 500; }
+.ad { position: relative; flex: 1; min-height: 0; background: var(--paper); color: var(--emerald-deep); border-radius: 2px; }
+.ad > div { position: absolute; inset: 0; padding: 22px 24px; display: flex; flex-direction: column; justify-content: center; gap: 8px; }
+.ad .k { font-size: 17px; color: var(--brass); font-weight: 700; }
+.ad .t { font-family: var(--f-title); font-size: 36px; font-weight: 700; line-height: 1.15; }
+.maker { display: flex; justify-content: space-between; align-items: center; font-size: 16px; color: rgba(251, 250, 246, .6); }
+.maker b { color: var(--paper); font-size: 18px; }
+
+/* ---------- متن اصلی ---------- */
+.main { padding: 40px 48px 34px; display: grid; grid-template-rows: auto auto 1fr auto; gap: 26px; min-width: 0; }
+.head { display: flex; justify-content: space-between; align-items: center; }
+.head h1 { margin: 0; font-family: var(--f-title); font-weight: 700; font-size: 46px; line-height: 1; color: var(--emerald-deep); }
+.head .meta { display: flex; gap: 22px; align-items: center; font-size: 19px; color: var(--muted); }
+.head .meta .pill { border: 1.5px solid var(--brass); color: var(--brass); border-radius: 999px; padding: 4px 16px; font-weight: 700; }
+.head .meta [data-updated] { color: var(--ink); font-weight: 700; }
+
+.keys { display: grid; grid-template-columns: 1.25fr 1fr 1fr; gap: 0; background: var(--paper); border: 1px solid var(--line); }
+.key { padding: 22px 30px 24px; display: grid; gap: 6px; border-inline-start: 1px solid var(--line); }
+.key:first-child { border-inline-start: 0; background: var(--emerald-deep); color: var(--paper); }
+.key .k { display: flex; justify-content: space-between; align-items: baseline; font-family: var(--f-title); font-weight: 700; font-size: 34px; line-height: 1.1; }
+.key .k small { font-family: var(--f-text); font-size: 17px; font-weight: 400; color: var(--muted); }
+.key:first-child .k small { color: rgba(251, 250, 246, .7); }
+.key .v { font-family: var(--f-num); font-weight: 800; font-size: 64px; line-height: 1.1; }
+.key:first-child .v { font-size: 80px; color: var(--brass-soft); }
+.key .b { display: flex; justify-content: space-between; font-size: 19px; color: var(--muted); }
+.key:first-child .b { color: rgba(251, 250, 246, .75); }
+.key .b [data-v] { font-family: var(--f-num); font-weight: 700; color: var(--ink); }
+.key:first-child .b [data-v] { color: var(--paper); }
+.key [data-d] { font-size: 20px; font-weight: 700; }
+.key:first-child [data-dir="up"] { color: #8fe0b9; }
+.key:first-child [data-dir="down"] { color: #ffb3a6; }
+
+.tables { display: grid; grid-template-columns: 1fr 1fr; gap: 34px; min-height: 0; }
+table { width: 100%; border-collapse: collapse; }
+caption { text-align: right; font-family: var(--f-title); font-weight: 700; font-size: 36px; color: var(--emerald-deep); padding-bottom: 6px; caption-side: top; }
+caption small { font-family: var(--f-text); font-size: 17px; font-weight: 400; color: var(--muted); margin-inline-start: 10px; }
+thead th { font-size: 17px; font-weight: 500; color: var(--brass); text-align: left; padding: 8px 0; border-bottom: 2px solid var(--emerald-deep); }
+thead th:first-child { text-align: right; }
+tbody td { padding: 12px 0; border-bottom: 1px solid var(--line); text-align: left; }
+tbody td:first-child { text-align: right; font-size: 27px; font-weight: 700; }
+tbody td:first-child small { display: block; font-size: 16px; font-weight: 400; color: var(--muted); }
+td.p { font-family: var(--f-num); font-size: 38px; font-weight: 700; }
+td.p.buy { color: var(--muted); font-weight: 500; }
+td.c { width: 104px; font-size: 19px; font-weight: 700; }
+td.c [data-d] { justify-content: flex-end; }
+[data-dir="up"] { color: var(--up); }
+[data-dir="down"] { color: var(--down); }
+[data-dir="flat"] { color: var(--muted); }
+
+.fx { display: grid; grid-template-columns: repeat(5, 1fr); border: 1px solid var(--line); background: var(--paper); }
+.fx > div { padding: 16px 22px; border-inline-start: 1px solid var(--line); display: grid; gap: 2px; }
+.fx > div:first-child { border-inline-start: 0; }
+.fx .k { display: flex; justify-content: space-between; align-items: center; font-size: 19px; font-weight: 700; }
+.fx .k .code { font-family: var(--f-num); font-size: 14px; color: var(--brass); letter-spacing: .08em; direction: ltr; }
+.fx .v { font-family: var(--f-num); font-weight: 800; font-size: 40px; line-height: 1.15; }
+.fx [data-d] { font-size: 16px; font-weight: 700; }
+</style>
+</head>
+<body>
+<div class="stage">
+
+  <aside class="band">
+    <div class="logo">
+      <svg viewBox="0 0 92 92" aria-hidden="true">
+        <circle cx="46" cy="46" r="44" fill="none" stroke="#e7d6ae" stroke-opacity=".6"></circle>
+        <circle cx="46" cy="46" r="36" fill="none" stroke="#e7d6ae" stroke-width="2"></circle>
+        <path d="M46 22 C58 34 58 58 46 70 C34 58 34 34 46 22 Z" fill="none" stroke="#e7d6ae" stroke-width="2"></path>
+        <path d="M22 46 C34 34 58 34 70 46 C58 58 34 58 22 46 Z" fill="none" stroke="#e7d6ae" stroke-width="1.4"></path>
+      </svg>
+      <div class="shop">طلا و جواهر آوین</div>
+      <div class="sub">جای لوگوی طلافروشی</div>
+    </div>
+    <div class="when">
+      <div class="day" data-day>۱۳</div>
+      <div class="month"><span data-month>مهر</span> <span data-year>۱۴۰۵</span></div>
+      <div class="wk"><span data-weekday>یکشنبه</span> · <span data-date-en>5 Oct 2026</span></div>
+    </div>
+    <div class="time"><span data-clock>۱۴:۳۲</span><span class="sec" data-sec>۰۸</span></div>
+    <div class="ounce" data-row="ounce">
+      <div class="k"><span>اونس جهانی طلا</span><span data-d="ounce"></span></div>
+      <div class="v"><small>$</small><span data-v="ounce.sell"></span></div>
+    </div>
+    <div class="ad" data-rotate="7000">
+      <div><span class="k">ویژه‌ی مهر</span><span class="t">۲۰٪ تخفیف اجرت ساخت سرویس عروس</span></div>
+      <div><span class="k">خرید طلای کهنه</span><span class="t">با قیمت روز، پرداخت فوری</span></div>
+      <div><span class="k">ضمانت</span><span class="t">فاکتور رسمی و تضمین عیار</span></div>
+    </div>
+    <div class="maker"><span>طراحی و اجرا</span><b>تابان‌برد</b></div>
+  </aside>
+
+  <main class="main">
+    <div class="head">
+      <h1>نرخ امروز بازار طلا</h1>
+      <div class="meta">
+        <span>آخرین بروزرسانی <span data-updated>۱۴:۳۲:۰۸</span></span>
+        <span class="pill">تومان</span>
+      </div>
+    </div>
+
+    <div class="keys">
+      <div class="key" data-row="gold18">
+        <div class="k">طلای ۱۸ عیار <small>هر گرم · فروش</small></div>
+        <div class="v" data-v="gold18.sell"></div>
+        <div class="b"><span>خرید <span data-v="gold18.buy"></span></span><span data-d="gold18"></span></div>
+      </div>
+      <div class="key" data-row="mesghal">
+        <div class="k">مثقال طلا <small>فروش</small></div>
+        <div class="v" data-v="mesghal.sell"></div>
+        <div class="b"><span>خرید <span data-v="mesghal.buy"></span></span><span data-d="mesghal"></span></div>
+      </div>
+      <div class="key" data-row="emami">
+        <div class="k">سکه امامی <small>فروش</small></div>
+        <div class="v" data-v="emami.sell"></div>
+        <div class="b"><span>خرید <span data-v="emami.buy"></span></span><span data-d="emami"></span></div>
+      </div>
+    </div>
+
+    <div class="tables">
+      <table>
+        <caption>طلا <small>گرم و مثقال</small></caption>
+        <thead><tr><th>عنوان</th><th>خرید</th><th>فروش</th><th>تغییر</th></tr></thead>
+        <tbody>
+          <tr data-row="gold24"><td>طلای ۲۴ عیار<small>هر گرم</small></td><td class="p buy" data-v="gold24.buy"></td><td class="p" data-v="gold24.sell"></td><td class="c"><span data-d="gold24"></span></td></tr>
+          <tr data-row="used"><td>طلای دست دوم<small>هر گرم</small></td><td class="p buy" data-v="used.buy"></td><td class="p" data-v="used.sell"></td><td class="c"><span data-d="used"></span></td></tr>
+          <tr data-row="melted"><td>طلای آبشده<small>هر مثقال</small></td><td class="p buy" data-v="melted.buy"></td><td class="p" data-v="melted.sell"></td><td class="c"><span data-d="melted"></span></td></tr>
+          <tr data-row="mazaneh"><td>مظنه بازار<small>هر مثقال · تهران</small></td><td class="p buy">—</td><td class="p" data-v="mazaneh.sell"></td><td class="c"><span data-d="mazaneh"></span></td></tr>
+        </tbody>
+      </table>
+      <table>
+        <caption>سکه <small>بانکی</small></caption>
+        <thead><tr><th>عنوان</th><th>خرید</th><th>فروش</th><th>تغییر</th></tr></thead>
+        <tbody>
+          <tr data-row="bahar"><td>بهار آزادی<small>طرح قدیم</small></td><td class="p buy" data-v="bahar.buy"></td><td class="p" data-v="bahar.sell"></td><td class="c"><span data-d="bahar"></span></td></tr>
+          <tr data-row="nim"><td>نیم سکه<small>بهار آزادی</small></td><td class="p buy" data-v="nim.buy"></td><td class="p" data-v="nim.sell"></td><td class="c"><span data-d="nim"></span></td></tr>
+          <tr data-row="rob"><td>ربع سکه<small>بهار آزادی</small></td><td class="p buy" data-v="rob.buy"></td><td class="p" data-v="rob.sell"></td><td class="c"><span data-d="rob"></span></td></tr>
+          <tr data-row="emami"><td>سکه امامی<small>طرح جدید</small></td><td class="p buy" data-v="emami.buy"></td><td class="p" data-v="emami.sell"></td><td class="c"><span data-d="emami"></span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="fx">
+      <div data-row="usd"><div class="k">دلار <span class="code">USD</span></div><div class="v" data-v="usd.sell"></div><span data-d="usd"></span></div>
+      <div data-row="eur"><div class="k">یورو <span class="code">EUR</span></div><div class="v" data-v="eur.sell"></div><span data-d="eur"></span></div>
+      <div data-row="try"><div class="k">لیر <span class="code">TRY</span></div><div class="v" data-v="try.sell"></div><span data-d="try"></span></div>
+      <div data-row="aed"><div class="k">درهم <span class="code">AED</span></div><div class="v" data-v="aed.sell"></div><span data-d="aed"></span></div>
+      <div data-row="cny"><div class="k">یوان <span class="code">CNY</span></div><div class="v" data-v="cny.sell"></div><span data-d="cny"></span></div>
+    </div>
+  </main>
+
+</div>
+<script src="../assets/board.js"></script>
+</body>
+</html>

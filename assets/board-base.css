@@ -1,0 +1,30 @@
+/* پایه‌ی مشترک همه‌ی تابلوها — صحنه‌ی ثابت که با board.js به اندازه‌ی نمایشگر مقیاس می‌شود */
+*, *::before, *::after { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; }
+body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+.stage {
+  position: absolute; top: 0; left: 0;
+  width: 1920px; height: 1080px;
+  transform-origin: 0 0;
+  direction: rtl;
+  overflow: hidden;
+}
+.stage.portrait { width: 1080px; height: 1920px; }
+/* ارقام فارسی وزیرمتن به‌طور پیش‌فرض هم‌عرض‌اند؛ tnum آن‌ها را بیش از حد باز می‌کند */
+[data-v], [data-clock], [data-sec], [data-updated] { white-space: nowrap; }
+[data-d] { display: inline-flex; align-items: center; gap: .35em; white-space: nowrap; }
+[data-d] .arrow { font-size: .62em; }
+[data-rotate] > * { transition: opacity .8s ease, transform .8s ease; }
+[data-rotate] > *:not(.is-on) { opacity: 0; transform: translateY(12px); pointer-events: none; }
+.ticker { overflow: hidden; white-space: nowrap; }
+.ticker-track { display: inline-flex; animation: ticker 60s linear infinite; }
+@keyframes ticker { from { transform: translateX(0); } to { transform: translateX(50%); } }
+@keyframes flashUp { 0% { background-color: var(--flash-up, rgba(60, 200, 140, .28)); } 100% { background-color: transparent; } }
+@keyframes flashDown { 0% { background-color: var(--flash-down, rgba(240, 98, 106, .28)); } 100% { background-color: transparent; } }
+.flash-up { animation: flashUp 1.6s ease-out; }
+.flash-down { animation: flashDown 1.6s ease-out; }
+@keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: .35; } }
+@media (prefers-reduced-motion: reduce) {
+  .ticker-track, .flash-up, .flash-down { animation: none !important; }
+  [data-rotate] > * { transition: none; }
+}

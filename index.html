@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>طرح‌های تابلو قیمت طلا</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&family=Noto+Nastaliq+Urdu:wght@700&display=swap">
+<link rel="stylesheet" href="assets/site.css">
+<style>
+.hero { display: grid; gap: 16px; padding-block: 8px 36px; }
+.hero h1 { margin: 0; font-family: var(--f-disp); font-weight: 700; font-size: clamp(40px, 7vw, 68px); line-height: 1.9; color: var(--accent); }
+.hero p { font-size: 18px; }
+.facts { display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: 15px; color: var(--muted); }
+.facts b { color: var(--fg); font-weight: 700; }
+.boards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px; }
+.board { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.shot { display: block; border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: #0d0b08; aspect-ratio: 16 / 9; max-width: 100%; }
+.shot img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; transition: transform .5s ease; }
+.shot:hover img { transform: scale(1.02); }
+.board.tall { grid-row: span 2; }
+.board.tall .shot { aspect-ratio: auto; }
+.board.tall .shot img { height: auto; }
+.board .head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.board h3 { font-size: 22px; }
+.board .idx { font-size: 14px; color: var(--muted); }
+.board .actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 4px; }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); gap: 8px 24px; }
+.checks li { display: flex; gap: 10px; align-items: baseline; }
+.checks li::before { content: "✓"; color: var(--up); font-weight: 800; }
+.ds { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr); gap: 28px; align-items: center; }
+.swatches { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.sw { border-radius: 10px; overflow: hidden; border: 1px solid var(--line); background: var(--surface); }
+.sw .bar { display: flex; height: 64px; }
+.sw .bar i { flex: 1; }
+.sw span { display: block; font-size: 13px; padding: 6px 10px; color: var(--muted); }
+.foot { font-size: 14px; color: var(--muted); border-top: 1px solid var(--line); padding-top: 20px; }
+@media (max-width: 760px) {
+  .boards, .ds { grid-template-columns: 1fr; }
+  .board.tall { grid-row: auto; }
+  .board.tall .shot { max-height: 520px; }
+  .swatches { grid-template-columns: repeat(2, 1fr); }
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="hero">
+    <span class="eyebrow">پیشنهاد طراحی · تابلو آنلاین قیمت برای طلافروشی‌ها</span>
+    <h1>تابلو قیمت طلا</h1>
+    <p>چهار مسیر بصری برای نمایش قیمت طلا، سکه و ارز روی تلویزیون و نمایشگرهای فروشگاهی. همه‌ی طرح‌ها راست‌به‌چپ و با ارقام فارسی‌اند و مستقیم با HTML/CSS ساخته شده‌اند تا همین ساختار در Next.js استفاده شود. هر طرح یک صفحه‌ی زنده است: ساعت و تاریخ شمسی کار می‌کنند و قیمت‌ها نوسان نمونه دارند.</p>
+    <div class="facts">
+      <span><b>۴</b> مسیر طراحی</span>
+      <span><b>۳</b> افقی ۱۹۲۰×۱۰۸۰</span>
+      <span><b>۱</b> عمودی ۱۰۸۰×۱۹۲۰</span>
+      <span><b>۱</b> سیستم طراحی مشترک</span>
+    </div>
+  </header>
+
+  <section aria-labelledby="t-boards">
+    <h2 id="t-boards">طرح‌ها</h2>
+    <p class="muted">روی هر تصویر بزنید تا نسخه‌ی زنده‌ی تمام‌صفحه باز شود. برای دیدن حالت واقعی، صفحه را روی تلویزیون یا در حالت تمام‌صفحه‌ی مرورگر (F11) باز کنید.</p>
+    <div class="boards">
+      <article class="board">
+        <a class="shot" href="boards/noir.html" aria-label="نمایش زنده‌ی طرح زرنگار"><img src="screenshots/noir.png" alt="طرح زرنگار: تابلو مشکی و طلایی با سه ستون طلا، سکه و ارز" loading="lazy"></a>
+        <div class="head"><h3>زرنگار</h3><span class="idx">طرح ۱</span></div>
+        <p>مشکی گرم و طلایی، برای ویترین‌های لوکس و فضای کم‌نور. قیمت فروش ۱۸ عیار بزرگ‌ترین عدد صفحه است و روی تلویزیون ۵۵ اینچ از حدود ۱۳ متر خوانده می‌شود.</p>
+        <div class="tags"><span class="tag">تم تیره</span><span class="tag">افقی</span><span class="tag">سه ستون</span><span class="tag">خوشنویسی نستعلیق</span></div>
+        <div class="actions"><a class="btn" href="boards/noir.html">نمایش زنده</a></div>
+      </article>
+      <article class="board tall">
+        <a class="shot" href="boards/portrait.html" aria-label="نمایش زنده‌ی طرح ستون"><img src="screenshots/portrait.png" alt="طرح ستون: تابلو عمودی شرابی و رزگلد" loading="lazy"></a>
+        <div class="head"><h3>ستون</h3><span class="idx">طرح ۴ · عمودی</span></div>
+        <p>نسخه‌ی عمودی برای استند کنار ویترین و نمایشگرهای باریک. شرابی و رزگلد؛ قیمت ۱۸ عیار در قاب قوسی بالای صفحه و بقیه‌ی قیمت‌ها به ترتیب اهمیت زیر آن.</p>
+        <div class="tags"><span class="tag">تم تیره</span><span class="tag">عمودی ۱۰۸۰×۱۹۲۰</span><span class="tag">پشته‌ای</span></div>
+        <div class="actions"><a class="btn" href="boards/portrait.html">نمایش زنده</a></div>
+      </article>
+      <article class="board">
+        <a class="shot" href="boards/ivory.html" aria-label="نمایش زنده‌ی طرح صدف"><img src="screenshots/ivory.png" alt="طرح صدف: تابلو روشن صدفی با نوار زمردی و جدول‌های قیمت" loading="lazy"></a>
+        <div class="head"><h3>صدف</h3><span class="idx">طرح ۲</span></div>
+        <p>زمینه‌ی روشن صدفی با نوار زمردی، برای فروشگاه‌های پرنور که صفحه‌ی تیره در آن‌ها بازتاب می‌دهد. جدول کلاسیک خرید و فروش که مشتری‌های قدیمی بازار به آن عادت دارند.</p>
+        <div class="tags"><span class="tag">تم روشن</span><span class="tag">افقی</span><span class="tag">جدولی</span></div>
+        <div class="actions"><a class="btn" href="boards/ivory.html">نمایش زنده</a></div>
+      </article>
+      <article class="board">
+        <a class="shot" href="boards/navy.html" aria-label="نمایش زنده‌ی طرح بازار"><img src="screenshots/navy.png" alt="طرح بازار: داشبورد سرمه‌ای با نمودار روند روز" loading="lazy"></a>
+        <div class="head"><h3>بازار</h3><span class="idx">طرح ۳</span></div>
+        <p>داشبورد مالی با نمودار روند روز برای هر شاخص. مناسب فروشگاه‌هایی که مشتری‌شان تغییرات بازار را دنبال می‌کند و نسخه‌ی وب و اپ را هم لازم دارند.</p>
+        <div class="tags"><span class="tag">تم تیره</span><span class="tag">افقی</span><span class="tag">نمودار روند</span></div>
+        <div class="actions"><a class="btn" href="boards/navy.html">نمایش زنده</a></div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="t-brief">
+    <h2 id="t-brief">همه‌ی موارد بریف در هر چهار طرح</h2>
+    <ul class="checks">
+      <li>طلای ۱۸ و ۲۴ عیار، دست دوم، آبشده و مثقال</li>
+      <li>مظنه‌ی بازار</li>
+      <li>سکه امامی، بهار آزادی، نیم و ربع</li>
+      <li>دلار، یورو، لیر، درهم و یوان</li>
+      <li>اونس جهانی طلا</li>
+      <li>تاریخ شمسی و میلادی، ساعت زنده</li>
+      <li>زمان آخرین بروزرسانی</li>
+      <li>تبلیغات و پیام‌های فروشگاه</li>
+      <li>لوگو و برند طلافروشی</li>
+      <li>لوگو و برند شرکت سازنده</li>
+      <li>نشانگر افزایش و کاهش قیمت</li>
+      <li>راست‌به‌چپ با ارقام فارسی</li>
+    </ul>
+  </section>
+
+  <section class="ds" aria-labelledby="t-ds">
+    <div style="display: grid; gap: 14px;">
+      <h2 id="t-ds">سیستم طراحی مشترک</h2>
+      <p>چهار طرح روی یک ساختار ساخته شده‌اند: یک مقیاس تایپوگرافی که برای فاصله‌ی دید محاسبه شده، یک فونت عدد برای همه‌ی تم‌ها، رنگ‌های معنایی افزایش و کاهش جدا از رنگ برند، و کامپوننت‌هایی که مستقیم به کامپوننت‌های Next.js تبدیل می‌شوند. توکن‌ها به صورت JSON برای وارد کردن در Figma (Tokens Studio) هم آماده‌اند.</p>
+      <div class="actions"><a class="btn" href="design-system.html">دیدن سیستم طراحی</a></div>
+    </div>
+    <div class="swatches" aria-hidden="true">
+      <div class="sw"><div class="bar"><i style="background:#0d0b08"></i><i style="background:#d6b26c"></i><i style="background:#f5ecda"></i></div><span>زرنگار</span></div>
+      <div class="sw"><div class="bar"><i style="background:#f2efe8"></i><i style="background:#0f4b3b"></i><i style="background:#a47e33"></i></div><span>صدف</span></div>
+      <div class="sw"><div class="bar"><i style="background:#0a1220"></i><i style="background:#e8b64a"></i><i style="background:#34c98a"></i></div><span>بازار</span></div>
+      <div class="sw"><div class="bar"><i style="background:#22080e"></i><i style="background:#e6a98c"></i><i style="background:#f7e8da"></i></div><span>ستون</span></div>
+    </div>
+  </section>
+
+  <p class="foot">نام فروشگاه، لوگوها و قیمت‌ها نمونه‌اند و فقط برای نمایش طرح استفاده شده‌اند.</p>
+</div>
+</body>
+</html>
