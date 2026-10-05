@@ -1,0 +1,256 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>رایانک — خانه</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap">
+<style>
+/* رایانک — اپ فروشگاه کامپیوتر (موبایل ۳۹۰×۸۴۴) */
+:root {
+  --brand: #1660d0;
+  --brand-dark: #0f4aa6;
+  --brand-soft: #e8f0fd;
+  --sale: #e5482d;
+  --ok: #138a5a;
+  --bg: #f4f5f7;
+  --card: #ffffff;
+  --ink: #1d2129;
+  --ink-2: #4b5260;
+  --muted: #858c99;
+  --line: #e7e9ed;
+  --r: 12px;
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body { font-size: 14px; line-height: 1.7; -webkit-font-smoothing: antialiased; }
+.app { width: 390px; min-height: 844px; margin: 0 auto; background: var(--bg); direction: rtl; position: relative; padding-bottom: 96px; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; border: 0; background: none; color: inherit; cursor: pointer; padding: 0; }
+.ic { width: 22px; height: 22px; flex: none; }
+.ic.s { width: 18px; height: 18px; }
+.ic.xs { width: 14px; height: 14px; }
+.art { display: block; width: 100%; height: auto; }
+
+.bar { display: flex; align-items: center; gap: 12px; padding: 14px 16px 10px; background: var(--card); }
+.bar h1 { margin: 0; font-size: 17px; font-weight: 700; flex: 1; }
+.icon-btn { width: 40px; height: 40px; display: grid; place-items: center; border-radius: 10px; color: var(--ink-2); position: relative; }
+.badge { position: absolute; top: 4px; left: 4px; min-width: 17px; height: 17px; padding: 0 4px; border-radius: 9px; background: var(--sale); color: #fff; font-size: 11px; font-weight: 700; line-height: 17px; text-align: center; }
+
+.price { font-weight: 800; font-size: 16px; white-space: nowrap; }
+.price small { font-size: 11px; font-weight: 500; color: var(--ink-2); margin-inline-start: 3px; }
+.old { font-size: 12px; color: var(--muted); text-decoration: line-through; }
+.off { background: var(--sale); color: #fff; font-size: 11px; font-weight: 700; border-radius: 10px; padding: 0 7px; line-height: 19px; }
+.rate { display: inline-flex; align-items: center; gap: 3px; font-size: 12px; color: var(--ink-2); }
+.rate .ic { color: #f2b01e; }
+
+.btn { display: flex; align-items: center; justify-content: center; gap: 8px; height: 48px; border-radius: 10px; background: var(--brand); color: #fff; font-weight: 700; font-size: 15px; }
+.btn.line { background: var(--card); color: var(--brand); border: 1px solid var(--brand); }
+
+.tabbar { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 390px; background: var(--card); border-top: 1px solid var(--line); display: grid; grid-template-columns: repeat(4, 1fr); padding: 8px 0 calc(10px + env(safe-area-inset-bottom, 0px)); direction: rtl; z-index: 5; }
+.tabbar a { display: grid; justify-items: center; gap: 2px; font-size: 11px; color: var(--muted); position: relative; }
+.tabbar a.on { color: var(--brand); font-weight: 700; }
+.tabbar .badge { top: -4px; left: 30px; }
+
+.sticky { position: fixed; bottom: 0; left: 50%; transform: translateX(-50%); width: 390px; background: var(--card); border-top: 1px solid var(--line); padding: 12px 16px calc(14px + env(safe-area-inset-bottom, 0px)); direction: rtl; z-index: 5; display: flex; align-items: center; gap: 14px; }
+.sticky .btn { flex: 1; }
+
+.sec { background: var(--card); margin-top: 8px; padding: 16px; }
+.sec-h { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+.sec-h h2 { margin: 0; font-size: 15px; font-weight: 700; }
+.sec-h a { font-size: 12px; color: var(--brand); display: inline-flex; align-items: center; gap: 2px; }
+.en { direction: ltr; unicode-bidi: isolate; }
+</style>
+<style>
+.top { background: var(--card); padding: 12px 16px 14px; display: grid; gap: 12px; }
+.top-row { display: flex; align-items: center; justify-content: space-between; }
+.logo { display: flex; align-items: center; gap: 6px; font-weight: 800; font-size: 21px; color: var(--brand); letter-spacing: -.2px; }
+.logo span { width: 26px; height: 26px; border-radius: 8px; background: var(--brand); display: grid; place-items: center; color: #fff; }
+.logo span .ic { width: 16px; height: 16px; }
+.search { display: flex; align-items: center; gap: 8px; height: 44px; border-radius: 10px; background: var(--bg); padding: 0 12px; color: var(--muted); font-size: 13px; }
+.search b { color: var(--brand); font-weight: 800; }
+
+.promo { margin: 12px 16px 0; border-radius: 16px; background: var(--brand); color: #fff; display: grid; grid-template-columns: 1fr 132px; align-items: center; padding: 18px 18px 18px 8px; overflow: hidden; position: relative; }
+.promo::after { content: ""; position: absolute; width: 180px; height: 180px; border-radius: 50%; background: rgba(255,255,255,.07); left: -40px; bottom: -90px; }
+.promo .k { font-size: 11px; background: rgba(255,255,255,.18); border-radius: 6px; padding: 1px 8px; justify-self: start; }
+.promo h2 { margin: 8px 0 4px; font-size: 17px; line-height: 1.5; }
+.promo p { margin: 0 0 12px; font-size: 12px; opacity: .85; }
+.promo a { display: inline-flex; align-items: center; gap: 4px; background: #fff; color: var(--brand); font-weight: 700; font-size: 12px; border-radius: 8px; padding: 6px 12px; }
+.promo .txt { display: grid; justify-items: start; position: relative; z-index: 1; }
+.dots { display: flex; justify-content: center; gap: 5px; margin-top: 8px; }
+.dots i { width: 6px; height: 6px; border-radius: 3px; background: #c9ced6; }
+.dots i.on { width: 16px; background: var(--brand); }
+
+.cats { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; padding: 14px 12px 4px; }
+.cats a { display: grid; justify-items: center; gap: 6px; font-size: 11.5px; color: var(--ink-2); }
+.cats span { width: 54px; height: 54px; border-radius: 16px; background: var(--card); display: grid; place-items: center; color: var(--brand); border: 1px solid var(--line); }
+
+.deal { background: var(--sale); margin-top: 12px; padding: 14px 0 14px 0; }
+.deal-h { display: flex; justify-content: space-between; align-items: center; padding: 0 16px 12px; color: #fff; }
+.deal-h h2 { margin: 0; font-size: 15px; }
+.timer { display: flex; gap: 4px; direction: ltr; font-weight: 700; font-size: 13px; }
+.timer span { background: #fff; color: var(--sale); border-radius: 6px; padding: 0 6px; min-width: 26px; text-align: center; }
+.rail { display: flex; gap: 8px; padding: 0 16px; overflow: hidden; }
+.pcard { flex: none; width: 150px; background: var(--card); border-radius: 12px; padding: 10px; display: grid; gap: 6px; }
+.pcard .img { background: #f7f8fa; border-radius: 8px; padding: 10px 6px; }
+.pcard .name { font-size: 12px; line-height: 1.6; color: var(--ink); height: 38px; overflow: hidden; }
+.pcard .row { display: flex; justify-content: space-between; align-items: center; }
+.pcard .price { font-size: 14px; }
+
+.list { display: grid; }
+.item { display: grid; grid-template-columns: 96px 1fr; gap: 12px; padding: 12px 0; border-top: 1px solid var(--line); }
+.item:first-child { border-top: 0; padding-top: 0; }
+.item .img { background: #f7f8fa; border-radius: 10px; padding: 12px 6px; align-self: start; }
+.item .name { font-size: 13px; line-height: 1.7; font-weight: 500; }
+.item .spec { font-size: 11.5px; color: var(--muted); margin: 2px 0 6px; }
+.item .bottom { display: flex; justify-content: space-between; align-items: end; }
+.item .inst { font-size: 11px; color: var(--ok); background: #e7f5ee; border-radius: 6px; padding: 0 6px; }
+</style>
+</head>
+<body>
+<div class="app">
+
+  <header class="top">
+    <div class="top-row">
+      <div class="logo"><span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="5" width="15" height="10.5" rx="1.5"/><path d="M2.5 19h19"/></svg></span>رایانک</div>
+      <button class="icon-btn" aria-label="اعلان‌ها"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 16v-5a6 6 0 0 1 12 0v5l1.5 2h-15z"/><path d="M10 20.5a2 2 0 0 0 4 0"/></svg><span class="badge">۳</span></button>
+    </div>
+    <a class="search" href="#"><svg class="ic s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="M20 20l-3.6-3.6"/></svg>جستجو در <b>رایانک</b></a>
+  </header>
+
+  <div class="promo">
+    <div class="txt">
+      <span class="k">ویژه دانشجوها</span>
+      <h2>لپ‌تاپ قسطی، بدون ضامن</h2>
+      <p>تا ۱۸ قسط با کارت دانشجویی</p>
+      <a href="installment.html">ثبت درخواست <svg class="ic xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></a>
+    </div>
+    <svg class="art " viewBox="0 0 160 110" aria-hidden="true"><defs><linearGradient id="g63099" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c9d6ff"/><stop offset="1" stop-color="#6f8ee8"/></linearGradient></defs>
+<ellipse cx="80" cy="101" rx="66" ry="4.5" fill="#000" opacity=".08"/>
+<rect x="30" y="14" width="100" height="66" rx="5" fill="#d5d9df"/>
+<rect x="34" y="18" width="92" height="58" rx="2.5" fill="#15171b"/>
+<rect x="37" y="21" width="86" height="52" rx="1.5" fill="url(#g63099)"/>
+<path d="M37 60 Q62 44 84 55 T123 48 V73 H37 Z" fill="#fff" opacity=".22"/>
+<path d="M18 82 H142 L148 93 Q148 96 145 96 H15 Q12 96 12 93 Z" fill="#bfc4cc"/>
+<path d="M12 93 H148 Q148 96 145 96 H15 Q12 96 12 93 Z" fill="#a9b0ba"/>
+<rect x="68" y="82" width="24" height="3" rx="1.5" fill="#a9b0ba" opacity=".6"/></svg>
+  </div>
+  <div class="dots"><i class="on"></i><i></i><i></i><i></i></div>
+
+  <nav class="cats" aria-label="دسته‌بندی‌ها">
+    <a href="#"><span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4.5" y="5" width="15" height="10.5" rx="1.5"/><path d="M2.5 19h19"/></svg></span>لپ‌تاپ</a>
+    <a href="#"><span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="1.5"/><circle cx="12" cy="15" r="1.6"/><path d="M9.5 6.5h5"/></svg></span>کیس</a>
+    <a href="#"><span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="12" rx="1.5"/><path d="M9 20h6M12 16v4"/></svg></span>مانیتور</a>
+    <a href="#"><span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="1.5"/><path d="M10 3v4M14 3v4M10 17v4M14 17v4M3 10h4M3 14h4M17 10h4M17 14h4"/></svg></span>قطعات</a>
+    <a href="#"><span><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="3" width="10" height="18" rx="5"/><path d="M12 7v3"/></svg></span>جانبی</a>
+  </nav>
+
+  <section class="deal">
+    <div class="deal-h">
+      <h2>پیشنهاد شگفت‌انگیز</h2>
+      <div class="timer"><span>۰۷</span>:<span>۴۲</span>:<span>۱۸</span></div>
+    </div>
+    <div class="rail">
+      <a class="pcard" href="product.html">
+        <div class="img"><svg class="art " viewBox="0 0 160 110" aria-hidden="true"><defs><linearGradient id="g63099" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c9d6ff"/><stop offset="1" stop-color="#6f8ee8"/></linearGradient></defs>
+<ellipse cx="80" cy="101" rx="66" ry="4.5" fill="#000" opacity=".08"/>
+<rect x="30" y="14" width="100" height="66" rx="5" fill="#d5d9df"/>
+<rect x="34" y="18" width="92" height="58" rx="2.5" fill="#15171b"/>
+<rect x="37" y="21" width="86" height="52" rx="1.5" fill="url(#g63099)"/>
+<path d="M37 60 Q62 44 84 55 T123 48 V73 H37 Z" fill="#fff" opacity=".22"/>
+<path d="M18 82 H142 L148 93 Q148 96 145 96 H15 Q12 96 12 93 Z" fill="#bfc4cc"/>
+<path d="M12 93 H148 Q148 96 145 96 H15 Q12 96 12 93 Z" fill="#a9b0ba"/>
+<rect x="68" y="82" width="24" height="3" rx="1.5" fill="#a9b0ba" opacity=".6"/></svg></div>
+        <div class="name">لپ‌تاپ ایسوس Vivobook 15 X1504VA</div>
+        <div class="row"><span class="off">۷٪</span><span class="old">۵۲٬۴۰۰٬۰۰۰</span></div>
+        <div class="price">۴۸٬۷۹۰٬۰۰۰<small>تومان</small></div>
+      </a>
+      <a class="pcard" href="#">
+        <div class="img"><svg class="art " viewBox="0 0 160 110" aria-hidden="true"><defs><linearGradient id="g89157" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd2a8"/><stop offset="1" stop-color="#5e7ce2"/></linearGradient></defs>
+<ellipse cx="80" cy="101" rx="40" ry="4" fill="#000" opacity=".08"/>
+<rect x="14" y="8" width="132" height="76" rx="4" fill="#1f2227"/>
+<rect x="17" y="11" width="126" height="70" rx="2" fill="url(#g89157)"/>
+<path d="M72 84 h16 l3 12 h-22z" fill="#3a3e45"/><rect x="56" y="95" width="48" height="4" rx="2" fill="#2a2d33"/></svg></div>
+        <div class="name">مانیتور ۲۷ اینچ سامسونگ S27C310</div>
+        <div class="row"><span class="off">۱۲٪</span><span class="old">۱۳٬۴۵۰٬۰۰۰</span></div>
+        <div class="price">۱۱٬۸۴۰٬۰۰۰<small>تومان</small></div>
+      </a>
+      <a class="pcard" href="#">
+        <div class="img"><svg class="art " viewBox="0 0 160 110" aria-hidden="true"><ellipse cx="80" cy="99" rx="30" ry="4" fill="#000" opacity=".08"/>
+<rect x="56" y="16" width="48" height="82" rx="24" fill="#3d4148"/><path d="M56 46 Q56 16 80 16 V46 Z" fill="#4a4f57"/>
+<path d="M80 16 V46 M56 46 H104" stroke="#2b2e33" stroke-width="2"/><rect x="77" y="25" width="6" height="12" rx="3" fill="#8a9099"/></svg></div>
+        <div class="name">ماوس بی‌سیم لاجیتک M185</div>
+        <div class="row"><span class="off">۱۸٪</span><span class="old">۱٬۰۹۰٬۰۰۰</span></div>
+        <div class="price">۸۹۵٬۰۰۰<small>تومان</small></div>
+      </a>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-h"><h2>پرفروش‌ترین لپ‌تاپ‌ها</h2><a href="#">همه <svg class="ic xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg></a></div>
+    <div class="list">
+      <a class="item" href="#">
+        <div class="img"><svg class="art " viewBox="0 0 160 110" aria-hidden="true"><defs><linearGradient id="g93576" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#c5f1ea"/><stop offset="1" stop-color="#2bb3a3"/></linearGradient></defs>
+<ellipse cx="80" cy="101" rx="66" ry="4.5" fill="#000" opacity=".08"/>
+<rect x="30" y="14" width="100" height="66" rx="5" fill="#4a5568"/>
+<rect x="34" y="18" width="92" height="58" rx="2.5" fill="#15171b"/>
+<rect x="37" y="21" width="86" height="52" rx="1.5" fill="url(#g93576)"/>
+<path d="M37 60 Q62 44 84 55 T123 48 V73 H37 Z" fill="#fff" opacity=".22"/>
+<path d="M18 82 H142 L148 93 Q148 96 145 96 H15 Q12 96 12 93 Z" fill="#3b4453"/>
+<path d="M12 93 H148 Q148 96 145 96 H15 Q12 96 12 93 Z" fill="#2e3542"/>
+<rect x="68" y="82" width="24" height="3" rx="1.5" fill="#2e3542" opacity=".6"/></svg></div>
+        <div>
+          <div class="name">لپ‌تاپ لنوو IdeaPad Slim 3 15IRH8</div>
+          <div class="spec en">Core i7-13620H · 16GB · 1TB SSD</div>
+          <div class="bottom"><span class="rate"><svg class="ic xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.6l2.5 5.2 5.7.8-4.1 4 1 5.7L12 16.6l-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg>۴٫۴</span><span class="price">۶۳٬۹۵۰٬۰۰۰<small>تومان</small></span></div>
+          <span class="inst">قسطی ماهانه از ۵٬۱۹۰٬۰۰۰</span>
+        </div>
+      </a>
+      <a class="item" href="#">
+        <div class="img"><svg class="art " viewBox="0 0 160 110" aria-hidden="true"><defs><linearGradient id="g85693" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd9bf"/><stop offset="1" stop-color="#e38a5c"/></linearGradient></defs>
+<ellipse cx="80" cy="101" rx="66" ry="4.5" fill="#000" opacity=".08"/>
+<rect x="30" y="14" width="100" height="66" rx="5" fill="#c7c9ce"/>
+<rect x="34" y="18" width="92" height="58" rx="2.5" fill="#15171b"/>
+<rect x="37" y="21" width="86" height="52" rx="1.5" fill="url(#g85693)"/>
+<path d="M37 60 Q62 44 84 55 T123 48 V73 H37 Z" fill="#fff" opacity=".22"/>
+<path d="M18 82 H142 L148 93 Q148 96 145 96 H15 Q12 96 12 93 Z" fill="#b3b6bc"/>
+<path d="M12 93 H148 Q148 96 145 96 H15 Q12 96 12 93 Z" fill="#9ea2a9"/>
+<rect x="68" y="82" width="24" height="3" rx="1.5" fill="#9ea2a9" opacity=".6"/></svg></div>
+        <div>
+          <div class="name">لپ‌تاپ اپل MacBook Air 13 M3</div>
+          <div class="spec en">Apple M3 · 8GB · 256GB SSD</div>
+          <div class="bottom"><span class="rate"><svg class="ic xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.6l2.5 5.2 5.7.8-4.1 4 1 5.7L12 16.6l-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg>۴٫۷</span><span class="price">۸۹٬۵۰۰٬۰۰۰<small>تومان</small></span></div>
+          <span class="inst">قسطی ماهانه از ۷٬۲۷۰٬۰۰۰</span>
+        </div>
+      </a>
+      <a class="item" href="#">
+        <div class="img"><svg class="art " viewBox="0 0 160 110" aria-hidden="true"><defs><linearGradient id="g44698" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffb3bd"/><stop offset="1" stop-color="#d8364b"/></linearGradient></defs>
+<ellipse cx="80" cy="101" rx="66" ry="4.5" fill="#000" opacity=".08"/>
+<rect x="30" y="14" width="100" height="66" rx="5" fill="#2d3036"/>
+<rect x="34" y="18" width="92" height="58" rx="2.5" fill="#15171b"/>
+<rect x="37" y="21" width="86" height="52" rx="1.5" fill="url(#g44698)"/>
+<path d="M37 60 Q62 44 84 55 T123 48 V73 H37 Z" fill="#fff" opacity=".22"/>
+<path d="M18 82 H142 L148 93 Q148 96 145 96 H15 Q12 96 12 93 Z" fill="#23262b"/>
+<path d="M12 93 H148 Q148 96 145 96 H15 Q12 96 12 93 Z" fill="#1a1c20"/>
+<rect x="68" y="82" width="24" height="3" rx="1.5" fill="#1a1c20" opacity=".6"/></svg></div>
+        <div>
+          <div class="name">لپ‌تاپ ایسر Aspire 7 A715</div>
+          <div class="spec en">Core i5-12450H · RTX 3050 · 512GB</div>
+          <div class="bottom"><span class="rate"><svg class="ic xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.6l2.5 5.2 5.7.8-4.1 4 1 5.7L12 16.6l-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg>۴٫۲</span><span class="price">۵۹٬۲۰۰٬۰۰۰<small>تومان</small></span></div>
+          <span class="inst">قسطی ماهانه از ۴٬۸۱۰٬۰۰۰</span>
+        </div>
+      </a>
+    </div>
+  </section>
+
+  <nav class="tabbar" aria-label="منوی اصلی">
+    <a class="on" href="home.html"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10.5 12 4l8 6.5V19a1 1 0 0 1-1 1h-4.5v-6h-5v6H5a1 1 0 0 1-1-1z"/></svg>خانه</a>
+    <a href="#"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="4" width="6.5" height="6.5" rx="1.5"/><rect x="4" y="13.5" width="6.5" height="6.5" rx="1.5"/><rect x="13.5" y="13.5" width="6.5" height="6.5" rx="1.5"/></svg>دسته‌بندی</a>
+    <a href="cart.html"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 4h2l2.4 11.1a1.6 1.6 0 0 0 1.6 1.3h8.5a1.6 1.6 0 0 0 1.5-1.2L21 8H6.1"/><circle cx="9.5" cy="20" r="1.3"/><circle cx="17" cy="20" r="1.3"/></svg>سبد خرید<span class="badge">۲</span></a>
+    <a href="#"><svg class="ic " viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4.5 20c1.4-3.4 4.3-5 7.5-5s6.1 1.6 7.5 5"/></svg>رایانک من</a>
+  </nav>
+</div>
+</body>
+</html>

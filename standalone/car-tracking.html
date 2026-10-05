@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=390, initial-scale=1">
+<title>موتوریار — پیگیری سفارش</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap">
+<style>
+/* موتوریار — خدمات خودرو در محل */
+:root {
+  --navy: #13233f;
+  --navy-2: #1d3257;
+  --orange: #ff7a1a;
+  --orange-dark: #e2620a;
+  --orange-soft: #fff1e6;
+  --ok: #16915f;
+  --bg: #f5f6f8;
+  --card: #ffffff;
+  --ink: #18202e;
+  --ink-2: #4c5566;
+  --muted: #8a92a1;
+  --line: #e6e8ec;
+  font-family: "Vazirmatn", Tahoma, sans-serif;
+  color-scheme: light;
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; background: var(--bg); color: var(--ink); }
+body { font-size: 15px; line-height: 1.8; -webkit-font-smoothing: antialiased; direction: rtl; }
+a { color: inherit; text-decoration: none; }
+button { font: inherit; border: 0; background: none; color: inherit; cursor: pointer; padding: 0; }
+.ic { width: 22px; height: 22px; flex: none; }
+.ic.s { width: 18px; height: 18px; }
+.ic.xs { width: 14px; height: 14px; }
+.ic.l { width: 28px; height: 28px; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 48px; padding: 0 22px; border-radius: 10px; background: var(--orange); color: #fff; font-weight: 700; }
+.btn.dark { background: var(--navy); }
+.btn.ghost { background: transparent; border: 1px solid var(--line); color: var(--ink); }
+.logo { display: flex; align-items: center; gap: 8px; font-weight: 800; font-size: 21px; color: var(--navy); }
+.logo span { width: 32px; height: 32px; border-radius: 9px; background: var(--orange); color: #fff; display: grid; place-items: center; }
+.logo span .ic { width: 20px; height: 20px; }
+.plate { display: inline-flex; align-items: stretch; direction: ltr; border: 1.5px solid #1b1b1b; border-radius: 5px; overflow: hidden; font-weight: 800; font-size: 13px; height: 28px; background: #fff; }
+.plate .ir { background: #1d4fb8; width: 14px; }
+.plate .n { padding: 0 8px; display: flex; align-items: center; gap: 6px; direction: rtl; }
+.plate .c { border-inline-start: 1.5px solid #1b1b1b; padding: 0 6px; display: grid; place-items: center; font-size: 11px; line-height: 1; }
+</style>
+<style>
+body { font-size: 14px; }
+.app { width: 390px; min-height: 844px; margin: 0 auto; background: #e9edf2; position: relative; overflow: hidden; }
+.map { position: absolute; inset: 0 0 auto 0; height: 430px; }
+.map svg { width: 100%; height: 100%; display: block; }
+.float { position: absolute; top: 14px; inset-inline: 16px; display: flex; justify-content: space-between; }
+.fbtn { width: 42px; height: 42px; border-radius: 12px; background: #fff; display: grid; place-items: center; box-shadow: 0 4px 14px rgba(19,35,63,.14); color: var(--ink); }
+.order-no { background: #fff; border-radius: 12px; padding: 0 14px; display: flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--ink-2); box-shadow: 0 4px 14px rgba(19,35,63,.14); }
+.order-no b { color: var(--ink); direction: ltr; }
+.sheet { position: relative; margin-top: 390px; background: var(--card); border-radius: 22px 22px 0 0; padding: 10px 16px 24px; min-height: 454px; box-shadow: 0 -8px 30px rgba(19,35,63,.12); display: grid; gap: 16px; align-content: start; }
+.grab { width: 40px; height: 4px; border-radius: 2px; background: #d6dae0; justify-self: center; }
+.eta { display: flex; justify-content: space-between; align-items: center; }
+.eta h1 { margin: 0; font-size: 18px; }
+.eta p { margin: 0; font-size: 13px; color: var(--ink-2); }
+.eta .min { background: var(--orange-soft); color: var(--orange-dark); border-radius: 12px; padding: 6px 12px; text-align: center; line-height: 1.2; }
+.eta .min b { display: block; font-size: 22px; }
+.eta .min small { font-size: 11px; }
+.tech { display: flex; align-items: center; gap: 12px; border: 1px solid var(--line); border-radius: 14px; padding: 12px; }
+.ava { width: 48px; height: 48px; border-radius: 50%; background: #dfe6f2; color: var(--navy); display: grid; place-items: center; font-weight: 800; font-size: 17px; flex: none; }
+.tech .who { flex: 1; min-width: 0; }
+.tech .who b { display: block; font-size: 14.5px; }
+.tech .who span { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 3px; }
+.tech .who .ic { color: #f2b01e; }
+.tech .acts { display: flex; gap: 8px; }
+.round { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; background: var(--bg); color: var(--navy); }
+.round.call { background: var(--ok); color: #fff; }
+.vehicle { display: flex; justify-content: space-between; align-items: center; font-size: 12.5px; color: var(--ink-2); margin-top: -6px; padding-inline: 4px; }
+.tl { list-style: none; margin: 0; padding: 0; display: grid; }
+.tl li { display: grid; grid-template-columns: 22px 1fr auto; gap: 10px; position: relative; padding-bottom: 14px; font-size: 13.5px; }
+.tl li:not(:last-child)::before { content: ""; position: absolute; right: 10px; top: 20px; bottom: 0; width: 2px; background: var(--line); }
+.tl li.done:not(:last-child)::before { background: var(--ok); }
+.tl .dot { width: 22px; height: 22px; border-radius: 50%; display: grid; place-items: center; background: var(--bg); color: #b4bac4; border: 2px solid var(--line); }
+.tl .done .dot { background: var(--ok); color: #fff; border-color: var(--ok); }
+.tl .now .dot { background: #fff; border-color: var(--orange); }
+.tl .now .dot::after { content: ""; width: 8px; height: 8px; border-radius: 50%; background: var(--orange); }
+.tl .now { font-weight: 700; }
+.tl .todo { color: var(--muted); }
+.tl time { font-size: 12px; color: var(--muted); font-weight: 400; }
+.bill { display: flex; justify-content: space-between; align-items: center; background: var(--bg); border-radius: 12px; padding: 12px 14px; font-size: 13px; color: var(--ink-2); }
+.bill b { color: var(--ink); font-size: 15px; }
+.cancel { justify-self: center; font-size: 13px; color: var(--muted); }
+</style>
+</head>
+<body>
+<div class="app">
+  <div class="map">
+    <svg viewBox="0 0 390 430" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+      <rect width="390" height="430" fill="#e9edf2"/>
+      <rect x="20" y="210" width="90" height="60" rx="6" fill="#d6ead8"/>
+      <rect x="262" y="40" width="80" height="50" rx="6" fill="#d6ead8"/>
+      <path d="M0 120 L390 150 M0 300 L390 285 M90 0 L120 430 M250 0 L235 430 M350 0 L380 430" stroke="#fff" stroke-width="12"/>
+      <path d="M0 60 L390 70 M0 210 L390 215 M170 0 L180 430 M0 370 L390 360" stroke="#fff" stroke-width="5"/>
+      <path d="M318 384 L310 290 L238 284 L242 212 L177 208 L172 150" stroke="#13233f" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-dasharray="0.1 0"/>
+      <path d="M318 384 L310 290 L238 284" stroke="#13233f" stroke-width="5" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity=".25"/>
+      <g transform="translate(238 284)"><circle r="18" fill="#13233f" opacity=".14"/><circle r="12" fill="#13233f"/><path d="M0 -6 L5 5 L0 2.5 L-5 5Z" fill="#fff" transform="rotate(-5)"/></g>
+      <g transform="translate(172 150)"><circle r="20" fill="#ff7a1a" opacity=".16"/><path d="M0 6 C0 6 -11 -4 -11 -12 A11 11 0 0 1 11 -12 C11 -4 0 6 0 6Z" fill="#ff7a1a"/><circle cy="-12" r="4" fill="#fff"/></g>
+    </svg>
+  </div>
+  <div class="float">
+    <a class="fbtn" href="booking.html" aria-label="بازگشت"><svg class="ic s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></a>
+    <span class="order-no">سفارش <b>MY-48213</b></span>
+  </div>
+
+  <section class="sheet">
+    <i class="grab"></i>
+    <div class="eta">
+      <div><h1>تکنسین در راهه</h1><p>تا ساعت ۱۶:۲۰ می‌رسه</p></div>
+      <div class="min"><b>۱۲</b><small>دقیقه</small></div>
+    </div>
+
+    <div class="tech">
+      <span class="ava">ر.م</span>
+      <div class="who"><b>رضا محمدی</b><span><svg class="ic xs" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 3.6l2.5 5.2 5.7.8-4.1 4 1 5.7L12 16.6l-5.1 2.7 1-5.7-4.1-4 5.7-.8z"/></svg>۴٫۸ · ۶۱۲ سرویس</span></div>
+      <div class="acts">
+        <button class="round" aria-label="پیام"><svg class="ic s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 5.5h16v10.5H9.5L5 19.5V16H4z"/></svg></button>
+        <button class="round call" aria-label="تماس"><svg class="ic s" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 4h3.5l1.5 4-2 1.3a10.5 10.5 0 0 0 6.7 6.7L16 14l4 1.5V19a1.5 1.5 0 0 1-1.6 1.5A16 16 0 0 1 3.5 5.6 1.5 1.5 0 0 1 5 4z"/></svg></button>
+      </div>
+    </div>
+    <div class="vehicle"><span>وانت نیسان سفید</span><span class="plate"><i class="ir"></i><span class="n" style="direction: ltr;"><span>۲۲</span><span>ب</span><span>۳۸۴</span></span><span class="c">ایران<br>۷۷</span></span></div>
+
+    <ol class="tl">
+      <li class="done"><span class="dot"><svg class="ic xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span><span>سفارش ثبت شد</span><time>۱۰:۴۲</time></li>
+      <li class="done"><span class="dot"><svg class="ic xs" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12.5l4.2 4.2L19 7"/></svg></span><span>تکنسین تعیین شد</span><time>۱۵:۱۰</time></li>
+      <li class="now"><span class="dot"></span><span>در مسیر</span><time>۱۶:۰۸</time></li>
+      <li class="todo"><span class="dot"></span><span>شروع سرویس</span><time></time></li>
+      <li class="todo"><span class="dot"></span><span>پایان و پرداخت</span><time></time></li>
+    </ol>
+
+    <div class="bill"><span>تعویض روغن · بسته استاندارد</span><b>۲٬۴۸۰٬۰۰۰ تومان</b></div>
+    <button class="cancel">لغو سفارش</button>
+  </section>
+</div>
+</body>
+</html>
