@@ -11,22 +11,22 @@
 
   // ---- داده‌ی نمونه (تومان) — فقط برای نمایش طرح، قیمت واقعی نیست ----
   var DATA = {
-    gold18:  { label: 'طلای ۱۸ عیار',      unit: 'هر گرم',   buy: 10780000,  sell: 10850000,  chg: 0.62 },
-    gold24:  { label: 'طلای ۲۴ عیار',      unit: 'هر گرم',   buy: 14380000,  sell: 14465000,  chg: 0.58 },
-    used:    { label: 'طلای دست دوم',      unit: 'هر گرم',   buy: 10450000,  sell: 10520000,  chg: -0.21 },
-    melted:  { label: 'طلای آبشده',        unit: 'هر مثقال', buy: 46800000,  sell: 47000000,  chg: 0.44 },
-    mesghal: { label: 'مثقال طلا',         unit: 'هر مثقال', buy: 46900000,  sell: 47020000,  chg: 0.47 },
-    mazaneh: { label: 'مظنه بازار',        unit: 'هر مثقال', buy: 46950000,  sell: 46950000,  chg: 0.39 },
-    emami:   { label: 'سکه امامی',         unit: 'طرح جدید', buy: 115200000, sell: 115800000, chg: 0.91 },
-    bahar:   { label: 'سکه بهار آزادی',    unit: 'طرح قدیم', buy: 108000000, sell: 108900000, chg: 0.74 },
-    nim:     { label: 'نیم سکه',           unit: 'بهار آزادی', buy: 60500000, sell: 61200000, chg: -0.33 },
-    rob:     { label: 'ربع سکه',           unit: 'بهار آزادی', buy: 36000000, sell: 36600000, chg: 0.12 },
-    usd:     { label: 'دلار آمریکا',       unit: 'USD', sym: '$',  buy: 114500, sell: 114900, chg: 0.35 },
-    eur:     { label: 'یورو',              unit: 'EUR', sym: '€',  buy: 133500, sell: 134100, chg: 0.18 },
-    try:     { label: 'لیر ترکیه',         unit: 'TRY', sym: '₺',  buy: 2740,   sell: 2770,   chg: -0.40 },
-    aed:     { label: 'درهم امارات',       unit: 'AED', sym: 'د.إ', buy: 31150, sell: 31280,  chg: 0.29 },
-    cny:     { label: 'یوان چین',          unit: 'CNY', sym: '¥',  buy: 16000,  sell: 16090,  chg: -0.08 },
-    ounce:   { label: 'اونس جهانی طلا',    unit: 'دلار', buy: 3862.40, sell: 3862.40, chg: 0.27, decimals: 2 }
+    gold18:  { label: 'طلای ۱۸ عیار',      unit: 'هر گرم',   buy: 10781400,  sell: 10847300,  chg: 0.62 },
+    gold24:  { label: 'طلای ۲۴ عیار',      unit: 'هر گرم',   buy: 14375200,  sell: 14463100,  chg: 0.58 },
+    used:    { label: 'طلای دست دوم',      unit: 'هر گرم',   buy: 10452600,  sell: 10518900,  chg: -0.21 },
+    melted:  { label: 'طلای آبشده',        unit: 'هر مثقال', buy: 46812000,  sell: 46985000,  chg: 0.44 },
+    mesghal: { label: 'مثقال طلا',         unit: 'هر مثقال', buy: 46905000,  sell: 47018000,  chg: 0.47 },
+    mazaneh: { label: 'مظنه بازار',        unit: 'هر مثقال', buy: 46940000,  sell: 46940000,  chg: 0.39 },
+    emami:   { label: 'سکه امامی',         unit: 'طرح جدید', buy: 115250000, sell: 115790000, chg: 0.91 },
+    bahar:   { label: 'سکه بهار آزادی',    unit: 'طرح قدیم', buy: 108120000, sell: 108860000, chg: 0.74 },
+    nim:     { label: 'نیم سکه',           unit: 'بهار آزادی', buy: 60480000, sell: 61150000, chg: -0.33 },
+    rob:     { label: 'ربع سکه',           unit: 'بهار آزادی', buy: 36070000, sell: 36580000, chg: 0.12 },
+    usd:     { label: 'دلار آمریکا',       unit: 'USD', sym: '$',  buy: 114520, sell: 114870, chg: 0.35 },
+    eur:     { label: 'یورو',              unit: 'EUR', sym: '€',  buy: 133480, sell: 134090, chg: 0.18 },
+    try:     { label: 'لیر ترکیه',         unit: 'TRY', sym: '₺',  buy: 2741,   sell: 2768,   chg: -0.40 },
+    aed:     { label: 'درهم امارات',       unit: 'AED', sym: 'د.إ', buy: 31160, sell: 31275,  chg: 0.29 },
+    cny:     { label: 'یوان چین',          unit: 'CNY', sym: '¥',  buy: 16010,  sell: 16085,  chg: -0.08 },
+    ounce:   { label: 'اونس جهانی طلا',    unit: 'دلار', buy: 3862.47, sell: 3862.47, chg: 0.27, decimals: 2 }
   };
 
   var params = new URLSearchParams(location.search);
@@ -52,24 +52,30 @@
     return d.decimals ? faDec.format(v) : faInt.format(Math.round(v));
   }
 
+  var seed = 7;   // بذر ثابت برای نمودار نمونه
+
   // ---- مقدار پایه‌ی روز (برای محاسبه‌ی درصد تغییر) ----
   Object.keys(DATA).forEach(function (k) {
     var d = DATA[k];
     d.open = d.sell / (1 + d.chg / 100);
-    d.hist = seedHistory(d.open, d.sell, 48);
+    d.hist = seedHistory(d.open, d.sell, 60);
   });
 
-  // تاریخچه‌ی ساختگی ولی پایدار (بدون Math.random) تا اسکرین‌شات‌ها ثابت بمانند
+  // تاریخچه‌ی روز با گام تصادفی بذرگذاری‌شده: شبیه نمودار واقعی و در هر بار اجرا یکسان
+  function rand() { seed = (seed * 16807) % 2147483647; return (seed - 1) / 2147483646; }
   function seedHistory(from, to, n) {
-    var out = [];
-    for (var i = 0; i < n; i++) {
-      var t = i / (n - 1);
-      var base = from + (to - from) * t;
-      var wave = Math.sin(i * 0.9) * 0.0011 + Math.sin(i * 0.37 + 1.3) * 0.0016;
-      out.push(base * (1 + wave * (1 - t * 0.6)));
+    var walk = [0], vol = 0.0009;
+    for (var i = 1; i < n; i++) {
+      var shock = (rand() - 0.5) * 2 * vol;
+      if (rand() < 0.08) shock *= 3;               // گاهی یک جهش خبری
+      walk.push(walk[i - 1] + shock);
     }
-    out[n - 1] = to;
-    return out;
+    // مسیر را طوری خم می‌کنیم که از قیمت شروع به قیمت فعلی برسد
+    var drift = walk[n - 1];
+    return walk.map(function (w, i) {
+      var t = i / (n - 1);
+      return (from + (to - from) * t) * (1 + w - drift * t);
+    });
   }
 
   function pct(key) {
@@ -157,7 +163,7 @@
       var step = (Math.random() - 0.48) * 0.0012;
       var spread = d.sell - d.buy;
       var sell = d.sell * (1 + step);
-      var unitStep = d.decimals ? 0.1 : d.sell > 1e6 ? 5000 : d.sell > 1e4 ? 10 : 1;
+      var unitStep = d.decimals ? 0.01 : d.sell > 1e8 ? 10000 : d.sell > 1e6 ? 100 : d.sell > 1e4 ? 5 : 1;
       sell = Math.round(sell / unitStep) * unitStep;
       if (sell === d.sell) continue;
       var dir = sell > d.sell ? 'up' : 'down';

@@ -112,6 +112,11 @@ svg[data-trend="down"] .spark-dot { fill: var(--down); }
 .ticker-track span { padding-inline: 30px; border-inline-start: 1px solid var(--line); }
 .maker { font-size: 16px; color: var(--muted); display: flex; align-items: center; gap: 10px; }
 .maker b { color: var(--text); font-weight: 700; font-size: 19px; }
+.maker { display: flex; align-items: center; gap: 12px; }
+.maker-mark { width: 34px; height: 34px; flex: none; }
+.maker-txt { display: grid; line-height: 1.35; }
+.maker-txt b { display: block; margin: 0; }
+.maker { justify-content: flex-start; }
 </style>
 </head>
 <body>
@@ -119,17 +124,12 @@ svg[data-trend="down"] .spark-dot { fill: var(--down); }
 
   <header class="top">
     <div class="brand">
-      <svg viewBox="0 0 72 72" aria-hidden="true">
-        <rect x="1" y="1" width="70" height="70" rx="18" fill="#15233b" stroke="#20314f"></rect>
-        <path d="M20 46 L36 18 L52 46 Z" fill="none" stroke="#e8b64a" stroke-width="3" stroke-linejoin="round"></path>
-        <path d="M26 46 L36 30 L46 46" fill="none" stroke="#e8b64a" stroke-width="2" stroke-linejoin="round" opacity=".6"></path>
-        <path d="M16 52 H56" stroke="#e8b64a" stroke-width="3" stroke-linecap="round"></path>
-      </svg>
-      <div><div class="shop">طلا و جواهر آوین</div><div class="sub">جای لوگوی طلافروشی</div></div>
+      <svg class="logo-mark" style="color:#e8b64a" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linejoin="round"><polygon points="42.3,7.1 56.9,21.7 56.9,42.3 42.3,56.9 21.7,56.9 7.1,42.3 7.1,21.7 21.7,7.1" stroke-width="2.6"></polygon><polygon points="37.0,20.0 44.0,27.0 44.0,37.0 37.0,44.0 27.0,44.0 20.0,37.0 20.0,27.0 27.0,20.0" stroke-width="1.8"></polygon><path d="M37.0,20.0 L42.3,7.1 M37.0,20.0 L56.9,21.7 M44.0,27.0 L56.9,21.7 M44.0,27.0 L56.9,42.3 M44.0,37.0 L56.9,42.3 M44.0,37.0 L42.3,56.9 M37.0,44.0 L42.3,56.9 M37.0,44.0 L21.7,56.9 M27.0,44.0 L21.7,56.9 M27.0,44.0 L7.1,42.3 M20.0,37.0 L7.1,42.3 M20.0,37.0 L7.1,21.7 M20.0,27.0 L7.1,21.7 M20.0,27.0 L21.7,7.1 M27.0,20.0 L21.7,7.1 M27.0,20.0 L42.3,7.1" stroke-width="1.1" opacity=".75"></path></g></svg>
+      <div><div class="shop">طلا و جواهر آوین</div><div class="sub">طلا و جواهرات · از ۱۳۷۲</div></div>
     </div>
     <span class="live"><i></i>قیمت‌های زنده</span>
     <span class="spacer"></span>
-    <div class="upd">آخرین بروزرسانی <b data-updated>۱۴:۳۲:۰۸</b><br>همه‌ی قیمت‌ها به تومان</div>
+    <div class="upd">آخرین بروزرسانی <b data-updated>۱۴:۳۲:۰۸</b><br>همه قیمت‌ها به تومان</div>
     <div class="clock">
       <div class="t"><span data-clock>۱۴:۳۲</span><span class="sec" data-sec>۰۸</span></div>
       <div class="d"><b><span data-weekday>یکشنبه</span> <span data-date>۱۳ مهر ۱۴۰۵</span></b><span data-date-en dir="ltr">5 Oct 2026</span></div>
@@ -193,7 +193,7 @@ svg[data-trend="down"] .spark-dot { fill: var(--down); }
       </ul>
     </div>
     <div class="ad" data-rotate="7000">
-      <div><i class="ring"></i><span class="k">پیشنهاد ویژه‌ی مهر</span><span class="t">۲۰٪ تخفیف اجرت ساخت سرویس عروس</span><span class="f">تا پایان مهر ماه</span></div>
+      <div><i class="ring"></i><span class="k">پیشنهاد ویژه مهر</span><span class="t">۲۰٪ تخفیف اجرت ساخت سرویس عروس</span><span class="f">تا پایان مهر ماه</span></div>
       <div><i class="ring"></i><span class="k">خرید طلای دست دوم</span><span class="t">با بالاترین قیمت روز، پرداخت فوری</span><span class="f">کارشناسی رایگان</span></div>
       <div><i class="ring"></i><span class="k">ضمانت اصالت</span><span class="t">فاکتور رسمی با کد رهگیری</span><span class="f">تضمین عیار و وزن</span></div>
     </div>
@@ -207,7 +207,7 @@ svg[data-trend="down"] .spark-dot { fill: var(--down); }
       <span>فاکتور رسمی با کد رهگیری و تضمین عیار</span>
       <span>ساعات کاری: شنبه تا پنجشنبه، ۱۰ تا ۲۱</span>
     </div></div>
-    <div class="maker">طراحی و اجرا <b>تابان‌برد</b></div>
+    <div class="maker"><svg class="maker-mark" style="color:#e8b64a" viewBox="0 0 32 32" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".55"></rect><rect x="8" y="17" width="3.6" height="7" rx="1" fill="currentColor"></rect><rect x="14.2" y="12" width="3.6" height="12" rx="1" fill="currentColor"></rect><rect x="20.4" y="8" width="3.6" height="16" rx="1" fill="currentColor"></rect></svg><span class="maker-txt">طراحی و اجرا<b>تابان‌برد</b></span></div>
   </footer>
 
 </div>

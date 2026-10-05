@@ -141,6 +141,11 @@ html, body { background: var(--ink); color: var(--cream); font-family: var(--f-t
 .maker { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 17px; border-inline-start: 1px solid var(--line); padding-inline-start: 28px; }
 .maker b { color: var(--cream); font-weight: 700; font-size: 20px; }
 .maker svg { width: 34px; height: 34px; }
+.maker { display: flex; align-items: center; gap: 12px; }
+.maker-mark { width: 34px; height: 34px; flex: none; }
+.maker-txt { display: grid; line-height: 1.35; }
+.maker-txt b { display: block; margin: 0; }
+.maker { justify-content: flex-start; }
 </style>
 </head>
 <body>
@@ -148,14 +153,10 @@ html, body { background: var(--ink); color: var(--cream); font-family: var(--f-t
 
   <header class="top">
     <div class="brand">
-      <svg viewBox="0 0 84 84" aria-hidden="true">
-        <rect x="1" y="1" width="82" height="82" rx="6" fill="none" stroke="#d6b26c" stroke-opacity=".5"></rect>
-        <path d="M42 14 L66 34 L42 70 L18 34 Z" fill="none" stroke="#f1dca4" stroke-width="2.5"></path>
-        <path d="M18 34 H66 M30 34 L42 14 L54 34 L42 70 L30 34" fill="none" stroke="#d6b26c" stroke-width="1.6"></path>
-      </svg>
+      <svg class="logo-mark" style="color:#f1dca4" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linejoin="round"><polygon points="42.3,7.1 56.9,21.7 56.9,42.3 42.3,56.9 21.7,56.9 7.1,42.3 7.1,21.7 21.7,7.1" stroke-width="2.6"></polygon><polygon points="37.0,20.0 44.0,27.0 44.0,37.0 37.0,44.0 27.0,44.0 20.0,37.0 20.0,27.0 27.0,20.0" stroke-width="1.8"></polygon><path d="M37.0,20.0 L42.3,7.1 M37.0,20.0 L56.9,21.7 M44.0,27.0 L56.9,21.7 M44.0,27.0 L56.9,42.3 M44.0,37.0 L56.9,42.3 M44.0,37.0 L42.3,56.9 M37.0,44.0 L42.3,56.9 M37.0,44.0 L21.7,56.9 M27.0,44.0 L21.7,56.9 M27.0,44.0 L7.1,42.3 M20.0,37.0 L7.1,42.3 M20.0,37.0 L7.1,21.7 M20.0,27.0 L7.1,21.7 M20.0,27.0 L21.7,7.1 M27.0,20.0 L21.7,7.1 M27.0,20.0 L42.3,7.1" stroke-width="1.1" opacity=".75"></path></g></svg>
       <div class="brand-text">
         <div class="shop">طلا و جواهر آوین</div>
-        <div class="shop-sub">جای لوگوی طلافروشی · بازار بزرگ، راسته‌ی زرگرها</div>
+        <div class="shop-sub">طلا و جواهرات · بازار بزرگ تهران، راسته زرگرها</div>
       </div>
     </div>
     <div class="clock">
@@ -215,7 +216,7 @@ html, body { background: var(--ink); color: var(--cream); font-family: var(--f-t
         <div class="val"><small>$</small><span data-v="ounce.sell"></span></div>
       </div>
       <div class="promo" data-rotate="7000">
-        <div><span class="k">پیشنهاد ویژه‌ی مهر</span><span class="t">۲۰٪ تخفیف اجرت ساخت سرویس عروس</span></div>
+        <div><span class="k">پیشنهاد ویژه مهر</span><span class="t">۲۰٪ تخفیف اجرت ساخت سرویس عروس</span></div>
         <div><span class="k">خرید طلای دست دوم</span><span class="t">با بالاترین قیمت روز و پرداخت فوری</span></div>
         <div><span class="k">ضمانت اصالت</span><span class="t">فاکتور رسمی با کد رهگیری و تضمین عیار</span></div>
       </div>
@@ -226,14 +227,11 @@ html, body { background: var(--ink); color: var(--cream); font-family: var(--f-t
     <div class="ticker"><div class="ticker-track" data-ticker>
       <span>ساخت و تعمیر انواع زیورآلات طلا در کمترین زمان</span>
       <span>خرید طلای دست دوم با بالاترین قیمت روز</span>
-      <span>اجرت ویژه‌ی سرویس عروس تا پایان مهر</span>
+      <span>اجرت ویژه سرویس عروس تا پایان مهر</span>
       <span>فاکتور رسمی با کد رهگیری و تضمین عیار</span>
       <span>ساعات کاری: شنبه تا پنجشنبه، ۱۰ تا ۲۱</span>
     </div></div>
-    <div class="maker">
-      <svg viewBox="0 0 34 34" aria-hidden="true"><rect x="1" y="1" width="32" height="32" rx="7" fill="none" stroke="#a39578" stroke-width="1.5"></rect><path d="M9 22 L15 14 L19 18 L25 10" fill="none" stroke="#d6b26c" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
-      <span>طراحی و اجرا<br><b>تابان‌برد</b></span>
-    </div>
+    <div class="maker"><svg class="maker-mark" style="color:#d6b26c" viewBox="0 0 32 32" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".55"></rect><rect x="8" y="17" width="3.6" height="7" rx="1" fill="currentColor"></rect><rect x="14.2" y="12" width="3.6" height="12" rx="1" fill="currentColor"></rect><rect x="20.4" y="8" width="3.6" height="16" rx="1" fill="currentColor"></rect></svg><span class="maker-txt">طراحی و اجرا<b>تابان‌برد</b></span></div>
   </footer>
 
 </div>

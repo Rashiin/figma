@@ -105,6 +105,11 @@ h2 small { font-family: var(--f-text); font-size: 18px; color: var(--muted); }
 .maker b { color: var(--champagne); font-size: 19px; margin-inline-start: 6px; }
 .meta { display: flex; justify-content: space-between; font-size: 19px; color: var(--muted); margin-top: -6px; }
 .meta [data-updated] { color: var(--champagne); }
+.maker { display: flex; align-items: center; gap: 12px; }
+.maker-mark { width: 34px; height: 34px; flex: none; }
+.maker-txt { display: grid; line-height: 1.35; }
+.maker-txt b { display: block; margin: 0; }
+.maker { justify-content: flex-start; }
 </style>
 </head>
 <body>
@@ -112,12 +117,8 @@ h2 small { font-family: var(--f-text); font-size: 18px; color: var(--muted); }
 
   <header class="top">
     <div class="brand">
-      <svg viewBox="0 0 96 96" aria-hidden="true">
-        <circle cx="48" cy="48" r="46" fill="none" stroke="#e6a98c" stroke-opacity=".5"></circle>
-        <circle cx="48" cy="56" r="22" fill="none" stroke="#f7cdb6" stroke-width="3"></circle>
-        <path d="M38 30 L48 18 L58 30 L48 36 Z" fill="none" stroke="#e6a98c" stroke-width="2.4" stroke-linejoin="round"></path>
-      </svg>
-      <div><div class="shop">طلا و جواهر آوین</div><div class="sub">جای لوگوی طلافروشی</div></div>
+      <svg class="logo-mark" style="color:#f7cdb6" viewBox="0 0 64 64" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-linejoin="round"><polygon points="42.3,7.1 56.9,21.7 56.9,42.3 42.3,56.9 21.7,56.9 7.1,42.3 7.1,21.7 21.7,7.1" stroke-width="2.6"></polygon><polygon points="37.0,20.0 44.0,27.0 44.0,37.0 37.0,44.0 27.0,44.0 20.0,37.0 20.0,27.0 27.0,20.0" stroke-width="1.8"></polygon><path d="M37.0,20.0 L42.3,7.1 M37.0,20.0 L56.9,21.7 M44.0,27.0 L56.9,21.7 M44.0,27.0 L56.9,42.3 M44.0,37.0 L56.9,42.3 M44.0,37.0 L42.3,56.9 M37.0,44.0 L42.3,56.9 M37.0,44.0 L21.7,56.9 M27.0,44.0 L21.7,56.9 M27.0,44.0 L7.1,42.3 M20.0,37.0 L7.1,42.3 M20.0,37.0 L7.1,21.7 M20.0,27.0 L7.1,21.7 M20.0,27.0 L21.7,7.1 M27.0,20.0 L21.7,7.1 M27.0,20.0 L42.3,7.1" stroke-width="1.1" opacity=".75"></path></g></svg>
+      <div><div class="shop">طلا و جواهر آوین</div><div class="sub">طلا و جواهرات · از ۱۳۷۲</div></div>
     </div>
     <div class="when">
       <div class="t"><span data-clock>۱۴:۳۲</span><span class="sec" data-sec>۰۸</span></div>
@@ -167,13 +168,13 @@ h2 small { font-family: var(--f-text); font-size: 18px; color: var(--muted); }
       <div class="v"><small>$</small><span data-v="ounce.sell"></span></div>
     </div>
     <div class="ad" data-rotate="7000">
-      <div><span class="k">ویژه‌ی مهر</span><span class="t">۲۰٪ تخفیف اجرت سرویس عروس</span></div>
+      <div><span class="k">ویژه مهر</span><span class="t">۲۰٪ تخفیف اجرت سرویس عروس</span></div>
       <div><span class="k">خرید طلای کهنه</span><span class="t">با قیمت روز و پرداخت فوری</span></div>
       <div><span class="k">ضمانت</span><span class="t">فاکتور رسمی و تضمین عیار</span></div>
     </div>
   </section>
 
-  <div class="meta"><span>همه‌ی قیمت‌ها به تومان</span><span>آخرین بروزرسانی <span data-updated>۱۴:۳۲:۰۸</span></span></div>
+  <div class="meta"><span>همه قیمت‌ها به تومان</span><span>آخرین بروزرسانی <span data-updated>۱۴:۳۲:۰۸</span></span></div>
 
   <footer class="foot">
     <div class="ticker"><div class="ticker-track" data-ticker>
@@ -182,7 +183,7 @@ h2 small { font-family: var(--f-text); font-size: 18px; color: var(--muted); }
       <span>فاکتور رسمی با کد رهگیری</span>
       <span>شنبه تا پنجشنبه، ۱۰ تا ۲۱</span>
     </div></div>
-    <div class="maker">طراحی و اجرا<b>تابان‌برد</b></div>
+    <div class="maker"><svg class="maker-mark" style="color:#e6a98c" viewBox="0 0 32 32" aria-hidden="true"><rect x="1.5" y="1.5" width="29" height="29" rx="8" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".55"></rect><rect x="8" y="17" width="3.6" height="7" rx="1" fill="currentColor"></rect><rect x="14.2" y="12" width="3.6" height="12" rx="1" fill="currentColor"></rect><rect x="20.4" y="8" width="3.6" height="16" rx="1" fill="currentColor"></rect></svg><span class="maker-txt">طراحی و اجرا<b>تابان‌برد</b></span></div>
   </footer>
 
 </div>

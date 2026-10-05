@@ -30,7 +30,7 @@ td.dist { font-weight: 700; }
 .comp { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 18px; }
 .spec-card { display: grid; gap: 10px; align-content: start; min-width: 0; }
 .spec-card p { font-size: 14px; color: var(--muted); }
-/* نمونه‌ی کامپوننت‌ها روی «صفحه‌ی تابلو» با رنگ‌های ثابت طرح زرنگار و بازار */
+/* نمونه کامپوننت‌ها روی «صفحه تابلو» با رنگ‌های ثابت طرح زرنگار و بازار */
 .screen { --s-bg: #0d0b08; --s-panel: #15110b; --s-line: rgba(214, 178, 108, .18); --s-text: #f5ecda; --s-muted: #a39578; --s-gold: #d6b26c; --s-up: #57c995; --s-down: #ec6f61;
   background: var(--s-bg); color: var(--s-text); border-radius: 10px; padding: 18px 20px; overflow: hidden; min-width: 0; }
 .screen.navy { --s-bg: #0a1220; --s-panel: #101b2d; --s-line: #20314f; --s-text: #e6edf7; --s-muted: #8797b0; --s-gold: #e8b64a; --s-up: #34c98a; --s-down: #f2646c; }
@@ -91,18 +91,18 @@ pre { margin: 0; background: var(--surface); border: 1px solid var(--line); bord
   <section aria-labelledby="t-pr">
     <h2 id="t-pr">اصول</h2>
     <div class="principles">
-      <div><h3>عدد، قهرمان صفحه است</h3><p>هر طرح یک عدد اصلی دارد (فروش ۱۸ عیار) که بزرگ‌ترین عنصر صفحه است. بقیه‌ی قیمت‌ها به ترتیب اهمیت کوچک‌تر می‌شوند.</p></div>
-      <div><h3>یک فونت برای همه‌ی اعداد</h3><p>همه‌ی تم‌ها ارقام را با وزیرمتن نشان می‌دهند. ارقام فارسی آن هم‌عرض‌اند و ستون‌ها هنگام تغییر قیمت جابه‌جا نمی‌شوند.</p></div>
+      <div><h3>عدد، قهرمان صفحه است</h3><p>هر طرح یک عدد اصلی دارد (فروش ۱۸ عیار) که بزرگ‌ترین عنصر صفحه است. بقیه قیمت‌ها به ترتیب اهمیت کوچک‌تر می‌شوند.</p></div>
+      <div><h3>یک فونت برای همه اعداد</h3><p>همه تم‌ها ارقام را با وزیرمتن نشان می‌دهند. ارقام فارسی آن هم‌عرض‌اند و ستون‌ها هنگام تغییر قیمت جابه‌جا نمی‌شوند.</p></div>
       <div><h3>رنگ معنایی جدا از برند</h3><p>سبز و قرمز فقط برای افزایش و کاهش‌اند و همیشه با فلش ▲▼ همراه‌اند تا برای افراد کوررنگ هم خوانا باشند.</p></div>
       <div><h3>راست‌به‌چپ کامل</h3><p>چیدمان، تیکر و ترتیب ستون‌ها RTL است. فقط نمودار روند از چپ به راست پیش می‌رود چون قرارداد جهانی نمودارهای مالی است.</p></div>
     </div>
   </section>
 
   <section aria-labelledby="t-type">
-    <h2 id="t-type">مقیاس تایپوگرافی و فاصله‌ی خوانایی</h2>
-    <p class="muted">اندازه‌ها روی صحنه‌ی پایه‌ی ۱۹۲۰×۱۰۸۰ تعریف شده‌اند. فاصله‌ی خوانایی با این قاعده‌ی عملی محاسبه شده: هر ۱ سانتی‌متر ارتفاع رقم، حدود ۳ متر فاصله‌ی خوانا. ارتفاع ارقام وزیرمتن حدود ۰٫۶۶ اندازه‌ی فونت است.</p>
+    <h2 id="t-type">مقیاس تایپوگرافی و فاصله خوانایی</h2>
+    <p class="muted">اندازه‌ها روی صحنه پایه ۱۹۲۰×۱۰۸۰ تعریف شده‌اند. فاصله خوانایی با این قاعده عملی محاسبه شده: هر ۱ سانتی‌متر ارتفاع رقم، حدود ۳ متر فاصله خوانا. ارتفاع ارقام وزیرمتن حدود ۰٫۶۶ اندازه فونت است.</p>
     <div class="controls">
-      <label for="tv">اندازه‌ی نمایشگر</label>
+      <label for="tv">اندازه نمایشگر</label>
       <select id="tv">
         <option value="43">۴۳ اینچ</option>
         <option value="55" selected>۵۵ اینچ</option>
@@ -121,7 +121,7 @@ pre { margin: 0; background: var(--surface); border: 1px solid var(--line); bord
 
   <section aria-labelledby="t-col">
     <h2 id="t-col">رنگ‌ها</h2>
-    <p class="muted">هر تم همین نقش‌ها را دارد؛ فقط مقدارها عوض می‌شوند. در Figma هر تم یک Mode از مجموعه‌ی متغیرهای <code>board</code> است.</p>
+    <p class="muted">هر تم همین نقش‌ها را دارد؛ فقط مقدارها عوض می‌شوند. در Figma هر تم یک Mode از مجموعه متغیرهای <code>board</code> است.</p>
     <div class="pal" id="pal"></div>
   </section>
 
@@ -146,7 +146,7 @@ pre { margin: 0; background: var(--surface); border: 1px solid var(--line); bord
             <span class="chip" data-dir="flat"><span aria-hidden="true">●</span> ۰٫۰۰٪</span>
           </div>
         </div>
-        <p>سه حالت up / down / flat. درصد نسبت به قیمت شروع روز. نسخه‌ی مقداری (تومان) هم دارد.</p>
+        <p>سه حالت up / down / flat. درصد نسبت به قیمت شروع روز. نسخه مقداری (تومان) هم دارد.</p>
       </div>
       <div class="spec-card">
         <h3>KpiCard · کارت شاخص با نمودار</h3>
@@ -157,7 +157,7 @@ pre { margin: 0; background: var(--surface); border: 1px solid var(--line); bord
             <svg data-spark="gold18" width="360" height="52" preserveAspectRatio="none" aria-hidden="true"></svg>
           </div>
         </div>
-        <p>برای طرح بازار. نمودار ۴۸ نقطه‌ی آخر روز را نشان می‌دهد؛ رنگ خط از جهت تغییر روز می‌آید.</p>
+        <p>برای طرح بازار. نمودار ۴۸ نقطه آخر روز را نشان می‌دهد؛ رنگ خط از جهت تغییر روز می‌آید.</p>
       </div>
       <div class="spec-card">
         <h3>ClockDate · ساعت و تاریخ</h3>
@@ -167,7 +167,7 @@ pre { margin: 0; background: var(--surface); border: 1px solid var(--line); bord
             <div class="d"><b><span data-weekday></span> <span data-date></span></b><span data-date-en dir="ltr"></span></div>
           </div>
         </div>
-        <p>تاریخ شمسی از تقویم خود مرورگر (<code>fa-IR-u-ca-persian</code>) می‌آید و به کتابخانه‌ی جداگانه نیاز ندارد.</p>
+        <p>تاریخ شمسی از تقویم خود مرورگر (<code>fa-IR-u-ca-persian</code>) می‌آید و به کتابخانه جداگانه نیاز ندارد.</p>
       </div>
       <div class="spec-card">
         <h3>PromoRotator · تبلیغ چرخشی</h3>
@@ -191,7 +191,7 @@ pre { margin: 0; background: var(--surface); border: 1px solid var(--line); bord
 
   <section aria-labelledby="t-res">
     <h2 id="t-res">نمایشگرها و مقیاس</h2>
-    <p class="muted">هر طرح روی یک صحنه‌ی ثابت طراحی شده و به اندازه‌ی نمایشگر مقیاس می‌شود، پس روی همه‌ی نمایشگرهای هم‌نسبت دقیقاً یکسان دیده می‌شود. برای نسبت‌های دیگر حاشیه‌ی هم‌رنگ زمینه اضافه می‌شود.</p>
+    <p class="muted">هر طرح روی یک صحنه ثابت طراحی شده و به اندازه نمایشگر مقیاس می‌شود، پس روی همه نمایشگرهای هم‌نسبت دقیقاً یکسان دیده می‌شود. برای نسبت‌های دیگر حاشیه هم‌رنگ زمینه اضافه می‌شود.</p>
     <div class="table-wrap">
       <table>
         <thead><tr><th>نمایشگر</th><th>رزولوشن</th><th>صحنه</th><th>ضریب مقیاس</th></tr></thead>
@@ -252,13 +252,13 @@ pre { margin: 0; background: var(--surface); border: 1px solid var(--line); bord
     { t: 'price-m', px: 36, use: 'ارز و قیمت خرید', s: '۱۱۴٬۹۰۰' },
     { t: 'label-l', px: 30, use: 'نام ردیف‌ها', s: 'طلای ۲۴ عیار' },
     { t: 'label-m', px: 22, use: 'تغییر روز، تاریخ', s: '▲ ۰٫۶۲٪' },
-    { t: 'caption', px: 18, use: 'واحد و توضیح؛ کوچک‌ترین اندازه‌ی مجاز', s: 'هر گرم' }
+    { t: 'caption', px: 18, use: 'واحد و توضیح؛ کوچک‌ترین اندازه مجاز', s: 'هر گرم' }
   ];
   var sel = document.getElementById('tv');
   var body = document.querySelector('#scale tbody');
   function render() {
     var inch = +sel.value;
-    var screenH = inch * 25.4 * 9 / Math.sqrt(337);        // ارتفاع صفحه‌ی ۱۶:۹ به میلی‌متر
+    var screenH = inch * 25.4 * 9 / Math.sqrt(337);        // ارتفاع صفحه ۱۶:۹ به میلی‌متر
     var pxMm = screenH / 1080;
     document.getElementById('tv-note').textContent = 'هر پیکسل صحنه ≈ ' + faN.format(pxMm) + ' میلی‌متر';
     body.innerHTML = SCALE.map(function (r) {
